@@ -1,0 +1,70 @@
+.Con {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 100%;
+  min-height: 12.75rem;
+  border-radius: 0.375rem;
+  box-sizing: border-box;
+  margin-bottom: 0.75rem;
+}
+.Con > div:nth-child(2) {
+  flex: 1 1;
+  position: relative;
+  display: block;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  color: #111236;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+  border-radius: 0.375rem;
+  z-index: 0;
+}
+.img {
+  width: 28%;
+  position: relative;
+  display: block;
+  background-color: #fff;
+  color: #111236;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+  border-radius: 0.75rem;
+}
+.img img {
+  width: 100%;
+  height: 100%;
+}
+.left {
+  padding: 0.75rem;
+  background-color: #fff;
+  flex: 2 1 auto;
+  box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+}
+.mid {
+  width: 0.75rem;
+  margin: 0.375rem auto;
+  padding: 0.375rem 0;
+  background-image: linear-gradient(#dddde5, #dddde5);
+  background-repeat: repeat-y;
+  background-position: 50% 0;
+  background-size: 0.125rem 0.5rem;
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  background-color: #fff;
+}
+.right {
+  background-color: #fff;
+  width: 13.875rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 0 0 auto;
+  padding: 0.75rem;
+  min-width: 30%;
+  border-radius: 0 0.375rem 0.375rem 0;
+  box-shadow: 0 1px 3px 0 rgb(37 32 31 / 30%);
+}
