@@ -12,7 +12,7 @@
   max-width: 68.375rem;
   /* border: 1px solid red; */
   display: flex;
-  height: 609px;
+  /* height: 609px; */
   flex-direction: column;
 }
 .section {
@@ -90,6 +90,9 @@
 .section > div:nth-child(2) > div:hover {
   border-bottom: 3px solid #dddde5;
 }
+.blueBottom {
+  border-bottom: 3px solid #0770e3 !important;
+}
 .section > div:nth-child(2) > div:nth-child(1) {
   display: flex;
   width: 80px;
@@ -121,3 +124,5 @@
   box-sizing: border-box;
   margin-bottom: 0.75rem;
 } */
+@media (max-width: 600px) {
+}

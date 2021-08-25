@@ -1,31 +1,24 @@
+import { useState } from "react";
 import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
-const data = [
-  {
-    img: "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x960.jpg",
-    name: "Radisson Blu Bengaluru",
-    rating: "4.5",
-    reviews: "1615",
-    cleanliness: "4.5",
-    distancefromCity: "11.6",
-    lowPrice: {
-      siteName: "Trip.com",
-      price: "2391",
-    },
+import { dataa } from "./utils/dataa";
+function ItemPage({ stay = 3 }) {
+  const [data, setData] = useState(dataa);
+  const handleBottom = (e) => {
+    let a = e.currentTarget.parentElement.children;
+    for (var i = 0; i < a.length; i++) {
+      a[i].classList.remove(`${styles.blueBottom}`);
+    }
+    e.currentTarget.classList.add(`${styles.blueBottom}`);
 
-    price: [
-      {
-        siteName: "Agoda",
-        price: "2578",
-      },
-      {
-        siteName: "Booking.com",
-        price: "2730",
-      },
-    ],
-  },
-];
-function ItemPage() {
+    if (e.currentTarget.textContent === "Best") {
+      setData(dataa);
+    } else if (e.currentTarget.textContent === "Guest Rating") {
+      setData((pre) => [...pre].sort((a, b) => -(Number(a.rating) - Number(b.rating))));
+    } else if (e.currentTarget.textContent === "Price") {
+    }
+  };
+
   return (
     <div className={styles.Con}>
       <div className={styles.Box}>
@@ -48,7 +41,7 @@ function ItemPage() {
             </div>
             <div>
               <div>
-                <p>{`108 hotels found in Bangaluru`}</p>
+                <p>{`${data.length} hotels found in Bangaluru`}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -73,7 +66,7 @@ function ItemPage() {
             </div>
           </div>
           <div>
-            <div>
+            <div onClick={handleBottom} className={styles.blueBottom}>
               Best
               <svg
                 marginLeft="5px"
@@ -87,16 +80,16 @@ function ItemPage() {
                 <path d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"></path>
               </svg>
             </div>
-            <div>Guest Rating</div>
-            <div>Price</div>
-            <div>Stars</div>
-            <div>Distance</div>
+            <div onClick={handleBottom}>Guest Rating</div>
+            <div onClick={handleBottom}>Price</div>
+            <div onClick={handleBottom}>Stars</div>
+            <div onClick={handleBottom}>Distance</div>
           </div>
           <div></div>
         </div>
         <div className={styles.ItemsDiv}>
           {data.map((item) => (
-            <Item data={item} />
+            <Item data={item} stay={stay} />
           ))}
         </div>
       </div>
