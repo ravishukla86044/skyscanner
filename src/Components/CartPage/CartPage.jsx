@@ -141,23 +141,23 @@ const mealPlan = [
 
 const guestRating = [
   {
-    title: "With honours (5+)",
+    title: "With honours (5)",
     id: 27,
   },
   {
-    title: "Excellent (4+)",
+    title: "Excellent (4)",
     id: 28,
   },
   {
-    title: "Very good (3+)",
+    title: "Very good (3)",
     id: 29,
   },
   {
-    title: "Good (2+)",
+    title: "Good (2)",
     id: 30,
   },
   {
-    title: "Satisfactory (1+)",
+    title: "Satisfactory (1)",
     id: 31,
   },
 ];
@@ -237,13 +237,13 @@ function CartPage() {
     } else if (item.id === 27 && arr[item.id] === false) {
       setData((pre) => [...pre].filter((i) => Number(i.rating) === 5));
     } else if (item.id === 28 && arr[item.id] === false) {
-      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 4));
+      setData((pre) => [...pre].filter((i) => Number(i.rating) === 4));
     } else if (item.id === 29 && arr[item.id] === false) {
-      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 3));
+      setData((pre) => [...pre].filter((i) => Number(i.rating) === 3));
     } else if (item.id === 30 && arr[item.id] === false) {
-      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 2));
+      setData((pre) => [...pre].filter((i) => Number(i.rating) === 2));
     } else if (item.id === 31 && arr[item.id] === false) {
-      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 1));
+      setData((pre) => [...pre].filter((i) => Number(i.rating) === 1));
     } else {
       setData(dataa);
     }
