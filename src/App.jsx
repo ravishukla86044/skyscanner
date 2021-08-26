@@ -1,10 +1,10 @@
 import "./App.css";
-import { ItemPage } from "./Components/CartPage/ItemPage";
+import { CartPage } from "./Components/CartPage/CartPage";
 
 function App() {
   return (
     <div className="App">
-      <ItemPage />
+      <CartPage />
     </div>
   );
 }

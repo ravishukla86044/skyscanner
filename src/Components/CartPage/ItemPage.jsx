@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
-import { dataa } from "./utils/dataa";
 
-function ItemPage({ stay = 3 }) {
-  const [data, setData] = useState(dataa);
+function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
   const [low, setLow] = useState(false);
   const [pBool, setpBool] = useState(false);
   const [sBool, setSBool] = useState(false);
@@ -53,7 +51,7 @@ function ItemPage({ stay = 3 }) {
       <div className={styles.Box}>
         <div className={styles.section}>
           <div>
-            <div>
+            <div onClick={toggleDrawer("left", true)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

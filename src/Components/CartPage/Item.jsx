@@ -164,4 +164,4 @@ function Item({ data, stay }) {
     </div>
   );
 }
-export { Item };
+export { Item, Star };
