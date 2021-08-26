@@ -20,14 +20,14 @@ function Dots({ n }) {
   n = Number(n);
   let floor = Math.floor(n);
   let arr = [];
-  var i = 1;
-  while (i <= 5) {
+  var i = 0;
+  while (i < 5) {
     arr.push(0);
     i++;
   }
-  var i = 1;
-  while (i <= 5) {
-    if (i <= floor) {
+  var i = 0;
+  while (i < 5) {
+    if (i < floor) {
       arr[i] = 1;
     } else if (n > floor) {
       arr[i] = 0.5;
@@ -35,7 +35,7 @@ function Dots({ n }) {
     }
     i++;
   }
-  arr.shift();
+  //arr.shift();
   return (
     <div className={styles.Dot}>
       {arr.map((item) => {

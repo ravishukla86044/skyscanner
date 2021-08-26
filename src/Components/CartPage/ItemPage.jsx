@@ -2,20 +2,49 @@ import { useState } from "react";
 import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
 import { dataa } from "./utils/dataa";
+
 function ItemPage({ stay = 3 }) {
   const [data, setData] = useState(dataa);
-  const handleBottom = (e) => {
+  const [low, setLow] = useState(false);
+  const [pBool, setpBool] = useState(false);
+  const [sBool, setSBool] = useState(false);
+
+  const handleBottom = (e, n) => {
+    setpBool(false);
+    setSBool(false);
     let a = e.currentTarget.parentElement.children;
     for (var i = 0; i < a.length; i++) {
       a[i].classList.remove(`${styles.blueBottom}`);
     }
     e.currentTarget.classList.add(`${styles.blueBottom}`);
 
-    if (e.currentTarget.textContent === "Best") {
+    if (n === 1) {
       setData(dataa);
-    } else if (e.currentTarget.textContent === "Guest Rating") {
+    } else if (n === 2) {
       setData((pre) => [...pre].sort((a, b) => -(Number(a.rating) - Number(b.rating))));
-    } else if (e.currentTarget.textContent === "Price") {
+    } else if (n === 3) {
+      setpBool(true);
+      setLow((pre) => !pre);
+
+      setData((pre) =>
+        [...pre].sort((a, b) =>
+          low
+            ? Number(a.lowPrice.price) - Number(b.lowPrice.price)
+            : -(Number(a.lowPrice.price) - Number(b.lowPrice.price))
+        )
+      );
+    } else if (n === 4) {
+      setSBool(true);
+      setLow((pre) => !pre);
+      setData((pre) =>
+        [...pre].sort((a, b) =>
+          low ? Number(a.star) - Number(b.star) : -(Number(a.star) - Number(b.star))
+        )
+      );
+    } else if (n === 5) {
+      setData((pre) =>
+        [...pre].sort((a, b) => Number(a.distancefromCity) - Number(b.distancefromCity))
+      );
     }
   };
 
@@ -66,7 +95,12 @@ function ItemPage({ stay = 3 }) {
             </div>
           </div>
           <div>
-            <div onClick={handleBottom} className={styles.blueBottom}>
+            <div
+              onClick={(e) => {
+                handleBottom(e, 1);
+              }}
+              className={styles.blueBottom}
+            >
               Best
               <svg
                 marginLeft="5px"
@@ -80,10 +114,34 @@ function ItemPage({ stay = 3 }) {
                 <path d="M12 1.5A10.5 10.5 0 1 0 22.5 12 10.5 10.5 0 0 0 12 1.5zM12 6a1.498 1.498 0 1 1-1.498 1.498A1.498 1.498 0 0 1 12 6zm1.493 10.676a1.5 1.5 0 0 1-2.98.001l-.01-.175-.003-4.501.01-.176a1.5 1.5 0 0 1 2.98 0l.01.175.003 4.501z"></path>
               </svg>
             </div>
-            <div onClick={handleBottom}>Guest Rating</div>
-            <div onClick={handleBottom}>Price</div>
-            <div onClick={handleBottom}>Stars</div>
-            <div onClick={handleBottom}>Distance</div>
+            <div
+              onClick={(e) => {
+                handleBottom(e, 2);
+              }}
+            >
+              Guest Rating
+            </div>
+            <div
+              onClick={(e) => {
+                handleBottom(e, 3);
+              }}
+            >
+              Price{pBool && (low ? " (high to low)" : " (low to high)")}
+            </div>
+            <div
+              onClick={(e) => {
+                handleBottom(e, 4);
+              }}
+            >
+              Stars{sBool && (low ? " (5 to 1)" : " (1 to 5)")}
+            </div>
+            <div
+              onClick={(e) => {
+                handleBottom(e, 5);
+              }}
+            >
+              Distance
+            </div>
           </div>
           <div></div>
         </div>
