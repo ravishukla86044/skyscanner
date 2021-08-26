@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import { ItemPage } from "./ItemPage";
-import styles from "./SidePopUp.module.css";
+import styles from "./CartPage.module.css";
 import { Star } from "./Item";
 import { dataa } from "./utils/dataa";
 
@@ -141,31 +141,38 @@ const mealPlan = [
 
 const guestRating = [
   {
-    title: "With honours",
+    title: "With honours (5+)",
     id: 27,
   },
   {
-    title: "Excellent",
+    title: "Excellent (4+)",
     id: 28,
   },
   {
-    title: "Very good",
+    title: "Very good (3+)",
     id: 29,
   },
   {
-    title: "Good",
+    title: "Good (2+)",
     id: 30,
   },
   {
-    title: "Satisfactory",
+    title: "Satisfactory (1+)",
     id: 31,
   },
 ];
 
-function ListItem({ item, index, star = false }) {
+function ListItem({ item, index, star = false, handleCheckbox, arr }) {
   return (
     <div className={styles.listItem}>
-      <input type="checkbox" className={styles.check} />
+      <input
+        onChange={(e) => {
+          handleCheckbox(e, item);
+        }}
+        type="checkbox"
+        className={styles.check}
+        checked={arr[item.id]}
+      />
 
       <div>
         <div className={styles.star}>
@@ -186,11 +193,62 @@ function ListHeading({ heading }) {
 }
 
 function CartPage() {
+  const arrr = Array(31).fill(false);
   const [data, setData] = useState(dataa);
+  const [arr, setArr] = useState(arrr);
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+
+  const handleCheckbox = (e, item) => {
+    if (item.id === 4 && arr[item.id] === false) {
+      setData((pre) =>
+        [...pre].filter((i) => Number(i.lowPrice.price) >= 217 && Number(i.lowPrice.price) < 834)
+      );
+    } else if (item.id === 5 && arr[item.id] === false) {
+      setData((pre) =>
+        [...pre].filter((i) => Number(i.lowPrice.price) >= 834 && Number(i.lowPrice.price) < 1450)
+      );
+    } else if (item.id === 6 && arr[item.id] === false) {
+      setData((pre) =>
+        [...pre].filter((i) => Number(i.lowPrice.price) >= 1450 && Number(i.lowPrice.price) < 2067)
+      );
+    } else if (item.id === 7 && arr[item.id] === false) {
+      setData((pre) =>
+        [...pre].filter((i) => Number(i.lowPrice.price) >= 2067 && Number(i.lowPrice.price) < 2684)
+      );
+    } else if (item.id === 8 && arr[item.id] === false) {
+      setData((pre) =>
+        [...pre].filter((i) => Number(i.lowPrice.price) >= 2684 && Number(i.lowPrice.price) < 3300)
+      );
+    } else if (item.id === 9 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.lowPrice.price) >= 3300));
+    } else if (item.id === 10 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.star) >= 5));
+    } else if (item.id === 11 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.star) === 4));
+    } else if (item.id === 12 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.star) === 3));
+    } else if (item.id === 12 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.star) === 2));
+    } else if (item.id === 12 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.star) === 1));
+    } else if (item.id === 27 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.rating) === 5));
+    } else if (item.id === 28 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 4));
+    } else if (item.id === 29 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 3));
+    } else if (item.id === 30 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 2));
+    } else if (item.id === 31 && arr[item.id] === false) {
+      setData((pre) => [...pre].filter((i) => Number(i.rating) >= 1));
+    } else {
+      setData(dataa);
+    }
+    setArr((pre) => [...pre].map((itemm, i) => (i === item.id ? !itemm : itemm)));
+  };
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event && event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
@@ -211,43 +269,49 @@ function CartPage() {
         </div>
 
         {bookWithPieceOfMind.map((item) => (
-          <ListItem item={item} />
+          <ListItem item={item} handleCheckbox={handleCheckbox} arr={arr} />
         ))}
       </div>
       <div className={styles.listBox}>
         <ListHeading heading={"View price as"} />
         {viewPrice.map((item) => (
-          <ListItem item={item} />
+          <ListItem item={item} handleCheckbox={handleCheckbox} arr={arr} />
         ))}
       </div>
       <div className={styles.listBox}>
         <ListHeading heading={"Star rating"} />
         {starRating.map((item, index) => (
-          <ListItem item={item} index={index} star={true} />
+          <ListItem
+            arr={arr}
+            item={item}
+            index={index}
+            star={true}
+            handleCheckbox={handleCheckbox}
+          />
         ))}
       </div>
       <div className={styles.listBox}>
         <ListHeading heading={"Guest rating"} />
         {guestRating.map((item, index) => (
-          <ListItem item={item} index={index} />
+          <ListItem arr={arr} item={item} index={index} handleCheckbox={handleCheckbox} />
         ))}
       </div>
       <div className={styles.listBox}>
         <ListHeading heading={"Accommodation type"} />
         {accomodationType.map((item, index) => (
-          <ListItem item={item} index={index} />
+          <ListItem arr={arr} item={item} index={index} handleCheckbox={handleCheckbox} />
         ))}
       </div>
       <div className={styles.listBox}>
         <ListHeading heading={"Cancellation policy"} />
         {policy.map((item, index) => (
-          <ListItem item={item} index={index} />
+          <ListItem arr={arr} item={item} index={index} handleCheckbox={handleCheckbox} />
         ))}
       </div>
       <div className={styles.listBox}>
         <ListHeading heading={"Meal plan"} />
         {mealPlan.map((item, index) => (
-          <ListItem item={item} index={index} />
+          <ListItem arr={arr} item={item} index={index} handleCheckbox={handleCheckbox} />
         ))}
       </div>
     </div>

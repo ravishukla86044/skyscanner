@@ -40,7 +40,10 @@
   cursor: pointer;
   vertical-align: text-bottom;
 
-  appearance: none;
+  /* appearance: none; */
+}
+.afterClick {
+  /* appearance: auto; */
 }
 .listItem > div:nth-child(1) {
   display: flex;

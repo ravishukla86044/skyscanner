@@ -215,7 +215,7 @@ const dataa = [
   },
   {
     star: 4,
-    img: "https://d2xf5gjipzd8cd.cloudfront.net/available/534849763/534849763_960x960.jpgg",
+    img: "https://d2xf5gjipzd8cd.cloudfront.net/available/534849763/534849763_960x576.jpg",
     name: "Royal Orchid Suites",
     rating: "4.5",
     reviews: "1139",
