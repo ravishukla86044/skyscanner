@@ -1,5 +1,6 @@
 import styles from "./Item.module.css";
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
+import { useState, useEffect } from "react";
 
 function Star({ n }) {
   let arr = [];
@@ -81,7 +82,17 @@ function PriceArr({ items }) {
 }
 
 function Item({ data, stay }) {
-  return (
+  const [width, setWidth] = useState(window.innerWidth);
+  window.addEventListener("resize", handleResize);
+  function handleResize() {
+    setWidth(window.innerWidth);
+    // console.log("no");
+  }
+
+  useEffect(() => {
+    // console.log("yes");
+  }, [width]);
+  return width > 600 ? (
     <div className={styles.Con}>
       <div className={styles.img}>
         <img src={data.img} alt="" />
@@ -158,6 +169,54 @@ function Item({ data, stay }) {
             <div className={styles.rLower}>
               <button>View Details</button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className={styles.smallCon}>
+      <div>
+        <img src={data.img} alt="" />
+        <div>
+          <p>{data.name} </p>
+          <Star n={data.star} />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div className={styles.rating}>{data.rating}</div>
+            <div>
+              <div className={styles.dotImg}>
+                <div>
+                  <img
+                    src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg"
+                    alt=""
+                  />
+                </div>
+                <Dots n={data.rating} />
+              </div>
+              <div className={styles.rev}>{`${data.reviews} reviews`}</div>
+            </div>
+          </div>
+          <p>{`Cleanliness ${data.cleanliness}/5`}</p>
+        </div>
+        <div className={styles.dis}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="1.125rem"
+              height="1.125rem"
+              fill="#68697f"
+            >
+              <path d="M13.5 16.963a.806.806 0 0 1 .595-.76 7.5 7.5 0 1 0-4.19 0 .806.806 0 0 1 .595.76V21a1.5 1.5 0 0 0 3 0z"></path>
+            </svg>
+            <p>{`${data.distancefromCity} km from city center`}</p>
+          </div>
+          <div className={styles.sPrice}>
+            <p>{`₹ ${data.lowPrice.price}`}</p>
+            <p>a night</p>
           </div>
         </div>
       </div>
