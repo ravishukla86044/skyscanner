@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
+import { Map } from "./Map";
 
 function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
   const [low, setLow] = useState(false);
@@ -141,7 +142,32 @@ function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
               Distance
             </div>
           </div>
-          <div></div>
+          <div>
+            <Map
+              center={{ lat: 12.9716, lng: 77.5946 }}
+              zoom={15}
+              places={[
+                {
+                  id: 1,
+                  name: "Radisson Blu Bengaluru Outer Ring Road",
+                  latitude: "12.9726",
+                  longitude: "77.5959",
+                },
+                {
+                  id: 2,
+                  name: "The Park Bangalore",
+                  latitude: "12.9736",
+                  longitude: "77.5969",
+                },
+                {
+                  id: 3,
+                  name: "Hilton Bangalore Embassy GolfLinks",
+                  latitude: "12.9756",
+                  longitude: "77.5979",
+                },
+              ]}
+            />
+          </div>
         </div>
         <div className={styles.ItemsDiv}>
           {data.map((item) => (

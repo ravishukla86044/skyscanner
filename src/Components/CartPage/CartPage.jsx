@@ -10,7 +10,8 @@ import { Star } from "./Item";
 import { dataa } from "./utils/dataa";
 import Heading from "../HomePage/Components/Header/Heading";
 import Footer from "../HomePage/Components/Footer/Footer";
-import FrontBox from "../HomePage/Components/FrontShow/FrontBox";
+
+import { Form } from "./Form";
 
 const useStyles = makeStyles({
   list: {
@@ -329,6 +330,7 @@ function CartPage({ formData }) {
   return (
     <>
       <Heading />
+      <Form formData={formData} />
       <div>
         <SwipeableDrawer
           anchor="left"
