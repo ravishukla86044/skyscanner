@@ -81,8 +81,16 @@ function PriceArr({ items }) {
   );
 }
 
-function Item({ data, stay }) {
+function Item({ data, formData }) {
   const [width, setWidth] = useState(window.innerWidth);
+  // const sarr = formData.current.sDate.split(" ");
+  // sarr.splice(2);
+  // console.log(sarr);
+  const d1 = new Date(formData.current.sDate);
+  const d2 = new Date(formData.current.lDate);
+  const diffTime = Math.abs(d2 - d1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  console.log(diffDays, typeof diffDays, formData);
   window.addEventListener("resize", handleResize);
   function handleResize() {
     setWidth(window.innerWidth);
@@ -161,7 +169,8 @@ function Item({ data, stay }) {
                 <p>{`₹ ${data.lowPrice.price}`}</p>
                 <p>a night</p>
                 <p>
-                  {`₹ ${data.lowPrice.price * stay}`} <span>total stay</span>
+                  {`₹ ${data.lowPrice.price * Math.ceil(formData.current.stays / 2) * diffDays}`}{" "}
+                  <span>total stay</span>
                 </p>
                 <span>Taxes and fees not included</span>
               </div>

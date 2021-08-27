@@ -1,0 +1,35 @@
+.gridHotMainCont {
+  padding: 20px 0;
+  background-color: rgb(241, 242, 248);
+}
+.gridBLine1 {
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif !important;
+  font-size: 30px !important;
+}
+.gridBLine2 {
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif !important;
+  font-size: 16px !important;
+}
+.hotelCardsGridCont {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+}
+@media only screen and (min-width: 992px) {
+  .hotelCardsGridCont {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 20px;
+    width: 75%;
+    margin: 20px auto;
+  }
+  .hotelCardsGridCont > div {
+    margin: 20px;
+  }
+}

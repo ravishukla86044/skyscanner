@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
 
-function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
+function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
   const [low, setLow] = useState(false);
   const [pBool, setpBool] = useState(false);
   const [sBool, setSBool] = useState(false);
-
+  console.log(formData);
   const handleBottom = (e, n) => {
     setpBool(false);
     setSBool(false);
@@ -68,7 +68,7 @@ function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
             </div>
             <div>
               <div>
-                <p>{`${data.length} hotels found in Bangaluru`}</p>
+                <p>{`${data.length} hotels found in ${formData.current.location}`}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -145,7 +145,7 @@ function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
         </div>
         <div className={styles.ItemsDiv}>
           {data.map((item) => (
-            <Item data={item} stay={stay} />
+            <Item data={item} formData={formData} />
           ))}
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
@@ -7,6 +8,9 @@ import { ItemPage } from "./ItemPage";
 import styles from "./CartPage.module.css";
 import { Star } from "./Item";
 import { dataa } from "./utils/dataa";
+import Heading from "../HomePage/Components/Header/Heading";
+import Footer from "../HomePage/Components/Footer/Footer";
+import FrontBox from "../HomePage/Components/FrontShow/FrontBox";
 
 const useStyles = makeStyles({
   list: {
@@ -192,8 +196,9 @@ function ListHeading({ heading }) {
   return <div className={styles.listHeading}>{heading}</div>;
 }
 
-function CartPage() {
+function CartPage({ formData }) {
   const arrr = Array(31).fill(false);
+
   const [data, setData] = useState(dataa);
   const [arr, setArr] = useState(arrr);
   const classes = useStyles();
@@ -316,9 +321,14 @@ function CartPage() {
       </div>
     </div>
   );
-
+  if (!formData) {
+    return <Redirect to="/"></Redirect>;
+  } else if (!formData.current) {
+    return <Redirect to="/"></Redirect>;
+  }
   return (
     <>
+      <Heading />
       <div>
         <SwipeableDrawer
           anchor="left"
@@ -329,7 +339,14 @@ function CartPage() {
           {list("left")}
         </SwipeableDrawer>
       </div>
-      <ItemPage toggleDrawer={toggleDrawer} data={data} setData={setData} dataa={dataa} />
+      <ItemPage
+        formData={formData}
+        toggleDrawer={toggleDrawer}
+        data={data}
+        setData={setData}
+        dataa={dataa}
+      />
+      <Footer />
     </>
   );
 }
