@@ -1,0 +1,2 @@
+
+export const PAYMENT_SUCCESS ="PAYMENT_SUCCESS"
