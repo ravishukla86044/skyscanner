@@ -322,9 +322,7 @@ function CartPage({ formData }) {
       </div>
     </div>
   );
-  if (!formData) {
-    return <Redirect to="/"></Redirect>;
-  } else if (!formData.current) {
+  if (!formData || !formData.current) {
     return <Redirect to="/"></Redirect>;
   }
   return (

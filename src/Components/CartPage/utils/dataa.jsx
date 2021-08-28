@@ -1,5 +1,6 @@
 const dataa = [
   {
+    id: 1,
     star: 5,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x960.jpg",
     name: "Radisson Blu Bengaluru Outer Ring Road",
@@ -25,6 +26,7 @@ const dataa = [
     ],
   },
   {
+    id: 2,
     star: 5,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/632654787/632654787_960x960.jpg",
     name: "The Park Bangalore",
@@ -46,6 +48,7 @@ const dataa = [
     ],
   },
   {
+    id: 3,
     star: 5,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/349586921/349586921_960x960.jpg",
     name: "DoubleTree Suites by Hilton Bangalore",
@@ -75,6 +78,7 @@ const dataa = [
     ],
   },
   {
+    id: 4,
     star: 5,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/557335658/557335658_960x960.jpg",
     name: "Hilton Bangalore Embassy GolfLinks",
@@ -104,6 +108,7 @@ const dataa = [
     ],
   },
   {
+    id: 5,
     star: 3,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/645780020/645780020_960x960.jpg",
     name: "Halcyon",
@@ -129,6 +134,7 @@ const dataa = [
     ],
   },
   {
+    id: 6,
     star: 3,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/540343419/540343419_960x960.jpg",
     name: "Hotel Bangalore Gate",
@@ -150,6 +156,7 @@ const dataa = [
     ],
   },
   {
+    id: 7,
     star: 3,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/534764087/534764087_960x960.jpg",
     name: "Golden Metro Hotel",
@@ -171,6 +178,7 @@ const dataa = [
     ],
   },
   {
+    id: 8,
     star: 4,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/353441233/353441233_960x960.jpg",
     name: "Davanam Sarovar Portico Suites",
@@ -185,6 +193,7 @@ const dataa = [
     },
   },
   {
+    id: 9,
     star: 4,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/446377957/446377957_960x960.jpg",
     name: "Radha Regent Electronic City",
@@ -214,6 +223,7 @@ const dataa = [
     ],
   },
   {
+    id: 10,
     star: 4,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/534849763/534849763_960x576.jpg",
     name: "Royal Orchid Suites",
@@ -239,6 +249,7 @@ const dataa = [
     ],
   },
   {
+    id: 11,
     star: 4,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/653029129/653029129_960x960.jpg",
     name: "Springs Hotel and Spa",
@@ -264,6 +275,7 @@ const dataa = [
     ],
   },
   {
+    id: 12,
     star: 2,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/576328385/576328385_960x960.jpg",
     name: "Hotel Raj",
@@ -285,6 +297,7 @@ const dataa = [
     ],
   },
   {
+    id: 13,
     star: 2,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/466604201/466604201_960x960.jpg",
     name: "Sandhya Residency",
@@ -306,6 +319,7 @@ const dataa = [
     ],
   },
   {
+    id: 14,
     star: 2,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/659057158/659057158_960x960.jpg",
     name: "Ivory Tower",
@@ -327,6 +341,7 @@ const dataa = [
     ],
   },
   {
+    id: 15,
     star: 2,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/353736727/353736727_960x960.jpg",
     name: "Luxtay Suites",
@@ -348,6 +363,7 @@ const dataa = [
     ],
   },
   {
+    id: 16,
     star: 1,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/547965839/547965839_960x960.jpg",
     name: "Nash Inn",
@@ -369,6 +385,7 @@ const dataa = [
     ],
   },
   {
+    id: 17,
     star: 1,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/463648890/463648890_960x960.jpg",
     name: "Comfort Residency",
@@ -383,6 +400,7 @@ const dataa = [
     },
   },
   {
+    id: 18,
     star: 1,
     img: "https://d2xf5gjipzd8cd.cloudfront.net/available/654188573/654188573_960x960.jpg",
     name: "OYO 11915 Varcity Park",

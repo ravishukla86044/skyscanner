@@ -6,6 +6,7 @@
   border-radius: 0.375rem;
   box-sizing: border-box;
   margin-bottom: 0.75rem;
+  cursor: pointer;
 }
 
 .Con > div:nth-child(2) {
@@ -400,6 +401,7 @@
   background-color: #00887d;
 }
 .smallCon {
+  cursor: pointer;
   position: relative;
   margin-bottom: 0.75rem;
   /* box-shadow: rgb(37 32 31 / 30%) 0px 1px 3px 0px; */
