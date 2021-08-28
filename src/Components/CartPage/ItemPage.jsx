@@ -142,7 +142,7 @@ function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
               Distance
             </div>
           </div>
-          <div>
+          <div className={styles.map}>
             <Map
               center={{ lat: 12.9716, lng: 77.5946 }}
               zoom={15}

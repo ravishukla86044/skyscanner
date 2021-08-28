@@ -1,3 +1,9 @@
+.sticky {
+  position: sticky;
+  top: -41px;
+  z-index: 100000;
+}
+
 .headBtn {
   display: flex;
   width: 100%;
@@ -88,7 +94,7 @@
   width: 40%;
 }
 .fBCBg > div:nth-child(2) {
-  width: 26%;
+  width: 30%;
 }
 .fBCBg > div:nth-child(3) {
   width: 12%;
@@ -154,5 +160,12 @@
   }
   .insideBox > div:nth-child(1) {
     margin-right: 8px;
+  }
+  .headBtn {
+    align-items: center;
+    justify-content: center;
+  }
+  .sticky {
+    position: static;
   }
 }

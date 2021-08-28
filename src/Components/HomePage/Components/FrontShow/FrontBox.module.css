@@ -5,7 +5,7 @@
   margin-top: -10px;
   background-image: url("https://js.skyscnr.com/sttc/hotels-website/hotels-website/static/media/fb52ac4eda2ad98d31de60d87b1146a2.4c4c15f5.jpg");
   width: 100%;
-  height: 600px;
+  height: 120%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,5 +48,8 @@
 @media only screen and (min-width: 992px) {
   .fBCBg > div > div {
     margin: 10px 0px;
+  }
+  .frontBoxDiv {
+    height: 500px;
   }
 }

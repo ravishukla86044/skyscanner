@@ -7,7 +7,7 @@
 .skyscanLogo {
   width: 200px !important;
   height: 100px !important;
-  margin-right: 70px !important;
+  margin-right: 0px !important;
 }
 .containerHead {
   width: 100% !important;
@@ -15,28 +15,7 @@
   display: flex !important;
   justify-content: space-between !important;
 }
-.headerBtns {
-  width: 250px !important;
-  height: 35px !important;
-  margin-top: 25px !important;
-  letter-spacing: 1.2px !important;
-  font-weight: 500 !important;
-  font-size: 13px !important;
-  background-color: white !important;
-}
-.headerBtns2 {
-  width: 120px !important;
-  height: 35px !important;
-  margin-top: 25px !important;
-  color: #0770e3 !important;
-  background-color: white !important;
-  font-weight: 700 !important;
-  font-size: large !important;
-}
-.headerBtns:hover,
-.headerBtns2:hover {
-  border: 3px solid #0770e3;
-}
+
 .avtarLogo {
   border-radius: 50%;
   width: 50px;
