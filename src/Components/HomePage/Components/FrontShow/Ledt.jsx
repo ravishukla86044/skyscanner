@@ -1,13 +1,18 @@
 import "date-fns";
 import React from "react";
+import { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker,
-} from "@material-ui/pickers";
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
 
-export default function Ledt() {
+export default function Ledt({ formData }) {
+  useEffect(() => {
+    formData.current = {
+      ...formData.current,
+      lDate: selectedDate,
+    };
+  }, []);
+
   var res = "";
   const neDate = new Date();
   let Monnt_2day = Number(neDate.getMonth());
@@ -40,6 +45,10 @@ export default function Ledt() {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
+    formData.current = {
+      ...formData.current,
+      lDate: date,
+    };
   };
 
   return (

@@ -2,6 +2,7 @@ import React from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { useHistory } from "react-router-dom";
 
 const BootstrapButton = withStyles({
   root: {
@@ -42,13 +43,22 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-export default function CustBtn() {
-  const classes = useStyles();
+export default function CustBtn({ formData }) {
+   const classes = useStyles();
+   const history = useHistory();
 
   return (
     <div>
-      <BootstrapButton variant="contained" color="primary" disableRipple className={classes.margin}>
-        Search Hotels <NavigateNextIcon/>
+      <BootstrapButton
+        variant="contained"
+        onClick={() => {
+          history.push("/hotels");
+        }}
+        color="primary"
+        disableRipple
+        className={classes.margin}
+      >
+        Search Hotels <NavigateNextIcon />
       </BootstrapButton>
     </div>
   );

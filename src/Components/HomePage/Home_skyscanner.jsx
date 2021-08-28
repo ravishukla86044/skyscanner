@@ -5,11 +5,11 @@ import FrontBox from './Components/FrontShow/FrontBox'
 import Heading from './Components/Header/Heading'
 import HotelGrid from './Components/InspirationHotel/HotelGrid'
 
-const HomeSkyPg = () => {
+const HomeSkyPg = ({ formData }) => {
     return (
         <div>
             <Heading />
-            <FrontBox />
+            <FrontBox formData={ formData }/>
             <LeadHot />
             <HotelGrid />
             <Footer/>

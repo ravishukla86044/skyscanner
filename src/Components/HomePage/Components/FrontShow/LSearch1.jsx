@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
@@ -25,14 +25,22 @@ const autocompleteService = { current: null };
 const useStyles = makeStyles((theme) => ({
   icon: {
     color: theme.palette.text.secondary,
-    marginRight: theme.spacing(2)
-  }
+    marginRight: theme.spacing(2),
+  },
 }));
 
-export default function LSearch1() {
+export default function LSearch1({ formData }) {
   const classes = useStyles();
   const [value, setValue] = React.useState(null);
   const [inputValue, setInputValue] = React.useState("");
+  useEffect(() => {
+    formData.current = {
+      ...formData.current,
+      location: inputValue,
+    };
+    console.log(formData);
+  }, []);
+
   const [options, setOptions] = React.useState([]);
   const loaded = React.useRef(false);
 
@@ -96,9 +104,7 @@ export default function LSearch1() {
     <Autocomplete
       id="google-map-demo"
       style={{ width: "100%" }}
-      getOptionLabel={(option) =>
-        typeof option === "string" ? option : option.description
-      }
+      getOptionLabel={(option) => (typeof option === "string" ? option : option.description)}
       filterOptions={(x) => x}
       options={options}
       autoComplete
@@ -111,18 +117,17 @@ export default function LSearch1() {
       }}
       onInputChange={(event, newInputValue) => {
         setInputValue(newInputValue);
+        formData.current = {
+          ...formData.current,
+          location: newInputValue,
+        };
+        console.log(formData);
       }}
       renderInput={(params) => (
-        <TextField
-          {...params}
-          placeholder="Enter destination name"
-          variant="outlined"
-          fullWidth
-        />
+        <TextField {...params} placeholder="Enter destination name" variant="outlined" fullWidth />
       )}
       renderOption={(option) => {
-        const matches =
-          option.structured_formatting.main_text_matched_substrings;
+        const matches = option.structured_formatting.main_text_matched_substrings;
         const parts = parse(
           option.structured_formatting.main_text,
           matches.map((match) => [match.offset, match.offset + match.length])
@@ -135,10 +140,7 @@ export default function LSearch1() {
             </Grid>
             <Grid item xs>
               {parts.map((part, index) => (
-                <span
-                  key={index}
-                  style={{ fontWeight: part.highlight ? 700 : 400 }}
-                >
+                <span key={index} style={{ fontWeight: part.highlight ? 700 : 400 }}>
                   {part.text}
                 </span>
               ))}

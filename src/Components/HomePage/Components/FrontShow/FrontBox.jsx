@@ -98,11 +98,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const FrontBox = () => {
+const FrontBox = ({ formData }) => {
   const classes = useStyles();
   return (
     <div>
-      <Container maxWidth="lg" className={styles.headBtn}>
+      <div className={styles.headBtn}>
         <BootstrapButton
           variant="contained"
           color="primary"
@@ -127,41 +127,53 @@ const FrontBox = () => {
         >
           <DriveEtaIcon /> Car Rental
         </BootstrapButton>
-      </Container>
+      </div>
       <div className={styles.frontBoxDiv}>
         <div className={styles.frontBoxDivCont}>
           <Container maxWidth="lg" className={styles.headContFrnt}>
             <h1>Find your place to stay</h1>
             <div className={styles.fBCBg}>
-            <Grid container spacing={1}>
-              <Grid item lg={4} xs={12} >
+              <Grid container spacing={1}>
+                <Grid item lg={4} xs={12}>
                   <Paper className={classes.paper}>
                     <div className={styles.heDivLab}>Where would you like to stay?</div>
-                  <LSearch1/>
-                </Paper>
-              </Grid>
-              <Grid item lg={2} xs={6} sm={3}>
-                  <Paper className={classes.paper}><div className={styles.heDivLab}>Check-in</div>
-                    <Stdt/>
+                    <div>
+                      <LSearch1 formData={formData} />
+                    </div>
                   </Paper>
-              </Grid>
-              <Grid item lg={2} xs={6} sm={3}>
-                  <Paper className={classes.paper}><div className={styles.heDivLab}>Check-out</div>
-                    <Ledt/>
+                </Grid>
+                <Grid item lg={2} xs={6} sm={3}>
+                  <Paper className={classes.paper}>
+                    <div className={styles.heDivLab}>Check-in</div>
+                    <div className={styles.customDates}>
+                      <Stdt formData={formData} />
+                    </div>
                   </Paper>
-              </Grid>
-              <Grid item lg={4} xs={12} sm={5}>
-                  <Paper className={classes.paper}><div className={styles.heDivLab}>Guests and rooms</div>
-                    <GuestSelect/>
+                </Grid>
+                <Grid item lg={2} xs={6} sm={3}>
+                  <Paper className={classes.paper}>
+                    <div className={styles.heDivLab}>Check-out</div>
+                    <div className={styles.customDates}>
+                      <Ledt formData={formData} />
+                    </div>
                   </Paper>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={5}>
+                  <Paper className={classes.paper}>
+                    <div className={styles.heDivLab}>Guests and rooms</div>
+                    <GuestSelect formData={formData} />
+                  </Paper>
+                </Grid>
+                <Grid item lg={8} xs={12} sm={7}>
+                  <Paper className={classes.paper} style={{ backgroundColor: "rgb(17, 18, 54)" }}>
+                    <CheckB formData={formData} />
+                  </Paper>
+                </Grid>
+                <Grid item lg={4} xs={12} sm={4}>
+                  <CustBtn formData={formData} />
+                </Grid>
               </Grid>
-              <Grid item lg={8} xs={12}  sm={7}>
-                <Paper className={classes.paper} style={{backgroundColor:"rgb(17, 18, 54)"}}><CheckB/></Paper>
-              </Grid>
-              <Grid item lg={4} xs={12} sm={4}><CustBtn/>
-              </Grid>
-              </Grid>
-              </div>
+            </div>
           </Container>
         </div>
       </div>

@@ -3,7 +3,14 @@
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
 }
-
+.hd1btn {
+  border: none !important;
+  font-size: 10px;
+  letter-spacing: 0ch;
+}
+.hd2btn {
+  display: none;
+}
 .skyscanLogo {
   width: 200px !important;
   height: 100px !important;
@@ -28,5 +35,13 @@
     width: 200px !important;
     height: 100px !important;
     margin-right: 450px !important;
+  }
+  .hd2btn {
+    display: flex !important;
+  }
+  .hd1btn {
+    border: 2px solid #d4d4d4 !important;
+    font-size: 12px !important;
+    letter-spacing: 1.5px !important;
   }
 }
