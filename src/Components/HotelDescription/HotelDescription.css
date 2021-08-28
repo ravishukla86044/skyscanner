@@ -192,9 +192,51 @@ p {
 .tamenities2 {
   width: 80%;
   margin: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
+
   display: flex;
   justify-content: space-around;
   background: whitesmoke;
+}
+.biggeranemities {
+  margin-top: 20px;
+}
+.SectionHeader_SectionHeader__1YzyH {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+}
+.SectionHeader_SectionHeader__title__2lkEs {
+  font-weight: 500;
+}
+
+.BpkText_bpk-text--xxxl__1QpyP {
+  font-size: 2.25rem;
+  line-height: 2.9375rem;
+  font-weight: 400;
+}
+.ReviewsFromTA_ReviewsFromTA__image__1-ngD {
+  margin-bottom: 0.25rem;
+  vertical-align: middle;
+}
+.ReviewCardList_ReviewCardList__3LlXu {
+  margin-top: 2.25rem;
+}
+.belowAdviser {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: left;
+}
+.belowAdviser > div:nth-child(1) {
+  width: 25%;
+}
+.belowAdviser > div:nth-child(2) {
+  width: 70%;
+}
+.belowAdviser > div > img {
+  width: 30px;
+  height: 30px;
 }

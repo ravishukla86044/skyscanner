@@ -15,12 +15,24 @@ import PoolRoundedIcon from "@material-ui/icons/PoolRounded";
 import FitnessCenterRoundedIcon from "@material-ui/icons/FitnessCenterRounded";
 import MeetingRoomRoundedIcon from "@material-ui/icons/MeetingRoomRounded";
 import ArrowForwardRoundedIcon from "@material-ui/icons/ArrowForwardRounded";
-import { Redirect } from "react-router-dom";
+import LocalCafeRoundedIcon from "@material-ui/icons/LocalCafeRounded";
+import LocalBarRoundedIcon from "@material-ui/icons/LocalBarRounded";
+import LocalDrinkRoundedIcon from "@material-ui/icons/LocalDrinkRounded";
+import RestaurantRoundedIcon from "@material-ui/icons/RestaurantRounded";
+import ConfirmationNumberRoundedIcon from "@material-ui/icons/ConfirmationNumberRounded";
+import SmokeFreeRoundedIcon from "@material-ui/icons/SmokeFreeRounded";
+import LocalLaundryServiceRoundedIcon from "@material-ui/icons/LocalLaundryServiceRounded";
+import TableChartRoundedIcon from "@material-ui/icons/TableChartRounded";
+import BathtubRoundedIcon from "@material-ui/icons/BathtubRounded";
+import NoteRoundedIcon from "@material-ui/icons/NoteRounded";
+import AirlineSeatFlatAngledRoundedIcon from "@material-ui/icons/AirlineSeatFlatAngledRounded";
+import AirlineSeatFlatRoundedIcon from "@material-ui/icons/AirlineSeatFlatRounded";
+import ThumbUpAltRoundedIcon from "@material-ui/icons/ThumbUpAltRounded";
 import { dataa } from "../CartPage/utils/dataa";
 import { useParams } from "react-router-dom";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
-  console.log(name);
+  console.log(formData, name, dataa);
   const img = [
     "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
     "https://d2xf5gjipzd8cd.cloudfront.net/available/443227701/443227701_960x576.jpg",
@@ -29,11 +41,7 @@ export const HotelDescription = ({ formData }) => {
     "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
     "https://d2xf5gjipzd8cd.cloudfront.net/available/443227700/443227700_960x576.jpg",
   ];
-  if (!formData || !formData.current) {
-    return <Redirect to="/" />;
-  } else if (!formData.current.target) {
-    return <Redirect to="/hotels" />;
-  }
+
   return (
     <div>
       <div className="toutterContainer">
@@ -45,6 +53,202 @@ export const HotelDescription = ({ formData }) => {
             </div>
           );
         })}
+      </div>
+
+      <div className="adviser" style={{ marginLeft: "10%", marginBottom: "100px" }}>
+        <div className="SectionHeader_SectionHeader__1YzyH">
+          <h1 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
+            <img
+              alt="TripAdvisor"
+              height="47"
+              className="ReviewsFromTA_ReviewsFromTA__image__1-ngD"
+              src="https://www.tripadvisor.com/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-64600-0.svg"
+            />{" "}
+            reviews
+          </h1>
+        </div>
+      </div>
+
+      <div className="belowAdviser">
+        <div>
+          <img
+            src="https://cdn4.iconfinder.com/data/icons/commercial-and-business-set-2/512/3076_man_c-512.png"
+            alt=""
+            style={{ marginTop: "20px" }}
+          />
+        </div>
+
+        <div>
+          <h4>Buisiness Travellar</h4>
+          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
+          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+        </div>
+
+        <div>
+          <div style={{ display: "flex" }}>
+            <h4>5.0/</h4>
+            <h5>5</h5>
+            <img
+              src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
+              style={{ marginLeft: "15px" }}
+              alt=""
+            />
+          </div>
+
+          <h3>Amazing visit, 5 star experience</h3>
+          <p>
+            Had an amazing visit for a week with a colleague. The staff was really good, being
+            greeted by Ranjana & Mohini in the morning really put a smile on our face. And they did
+            their best to make us comfortable. Pramod was also a really nice guy, did his best to
+            make us comfortable. We also received a cake when we last had a dinner at the restaurant
+            before we left to the airport. I did have some trouble with the room. Had problems with
+            the toilet in 2 different rooms. They did try their best at resolving this.
+          </p>
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <ThumbUpAltRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "15px" }}>
+              <p>Helpfull</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="belowAdviser">
+        <div>
+          <img
+            src="https://static.thenounproject.com/png/851649-200.png"
+            alt=""
+            style={{ marginTop: "20px" }}
+          />
+        </div>
+
+        <div>
+          <h4>Family Travellar</h4>
+          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
+          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+        </div>
+
+        <div>
+          <div style={{ display: "flex" }}>
+            <h4>5.0/</h4>
+            <h5>5</h5>
+            <img
+              src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
+              style={{ marginLeft: "15px" }}
+              alt=""
+            />
+          </div>
+
+          <h3>Melange - Great food with great staff</h3>
+          <p>
+            Had an amazing visit for a week with a colleague. The staff was really good, being
+            greeted by Ranjana & Mohini in the morning really put a smile on our face. And they did
+            their best to make us comfortable. Pramod was also a really nice guy, did his best to
+            make us comfortable. We also received a cake when we last had a dinner at the restaurant
+            before we left to the airport. I did have some trouble with the room. Had problems with
+            the toilet in 2 different rooms. They did try their best at resolving this.
+          </p>
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <ThumbUpAltRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "15px" }}>
+              <p>Helpfull</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="belowAdviser">
+        <div>
+          <img
+            src="https://cdn2.iconfinder.com/data/icons/gulu-vacation/100/travelling_convert-512.png"
+            alt=""
+            style={{ marginTop: "20px" }}
+          />
+        </div>
+
+        <div>
+          <h4>Anonymous traveller</h4>
+          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
+          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+        </div>
+
+        <div>
+          <div style={{ display: "flex" }}>
+            <h4>5.0/</h4>
+            <h5>5</h5>
+            <img
+              src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
+              style={{ marginLeft: "15px" }}
+              alt=""
+            />
+          </div>
+
+          <h3>Amazing Event Experience</h3>
+          <p>
+            Had an amazing experience with my daughter's engagement party. The variety of food and
+            quality was really good. Hotel staff was very friendly and they took care of our guests
+            very nicely. They really made them feel very comfortable. Purushotham was very helpful
+            and he really took care of our guests very well. A special Thanks to Chef who cooked the
+            delicious food for our guests. Thank you so very much for making our event so memorable.
+          </p>
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <ThumbUpAltRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "15px" }}>
+              <p>Helpfull</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="belowAdviser">
+        <div>
+          <img
+            src="https://cdn2.iconfinder.com/data/icons/leisure-entertainment-minimalist-icon-set/100/travel-globe-01-512.png"
+            alt=""
+            style={{ marginTop: "20px" }}
+          />
+        </div>
+
+        <div>
+          <h4>Anonymous traveller</h4>
+          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
+          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+        </div>
+
+        <div>
+          <div style={{ display: "flex" }}>
+            <h4>5.0/</h4>
+            <h5>5</h5>
+            <img
+              src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
+              style={{ marginLeft: "15px" }}
+              alt=""
+            />
+          </div>
+
+          <h3>Fabulous stay</h3>
+          <p>
+            Spent Christmas Eve, Christmas & Boxing Day 2020 here with my family. We had a fantastic
+            stay with wonderful food and excellent service. The staff was extremely accommodating
+            and did everything to make your stay enjoyable. Special mention to Mr. Raju (front desk)
+            and all the Melange restaurant employees (for example, Mr. Promod). Thanks for making
+            our Christmas 2020 memorable, Radisson Blu!
+          </p>
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <ThumbUpAltRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "15px" }}>
+              <p>Helpfull</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="tcheckIn1">
         <div className="SectionHeader_SectionHeader__1YzyH">
@@ -154,7 +358,7 @@ export const HotelDescription = ({ formData }) => {
             <h3>Accepted payment methods</h3>
           </div>
           <div className="tcardstypes">
-            <div class="PaymentCardPolicy_PaymentCardPolicy__cardLogo__3JaB0">
+            <div className="PaymentCardPolicy_PaymentCardPolicy__cardLogo__3JaB0">
               <img
                 src="https://js.skyscnr.com/sttc/hotels-website/hotels-website/static/media/master-card.de882b11.svg"
                 alt="card logo"
@@ -264,30 +468,352 @@ export const HotelDescription = ({ formData }) => {
         </div>
       </div>
 
-      <div className="tamenities2">
-        <div>
-          <h3>Buisiness Facilities</h3>
+      <div className="biggeranemities">
+        <div className="tamenities2">
+          <div>
+            <h3>Buisiness Facilities</h3>
+          </div>
+
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <MeetingRoomRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "3px" }}>
+              <p>Meeting Room</p>
+            </div>
+          </div>
+
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <ArrowForwardRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "3px" }}>
+              <p>Meeting Facilities</p>
+            </div>
+          </div>
+
+          <div style={{ display: "flex" }}>
+            <div style={{ marginTop: "16px" }}>
+              <ArrowForwardRoundedIcon fontSize="small" />
+            </div>
+            <div style={{ marginLeft: "3px" }}>
+              <p>Theater Facilities</p>
+            </div>
+          </div>
+        </div>
+        <hr style={{ width: "70%", margin: "auto" }}></hr>
+
+        <div className="tamenities2">
+          <div>
+            <h3>Food and drink</h3>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <LocalCafeRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Cafe</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <LocalBarRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Bar</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Banqueting service</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <LocalDrinkRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Water Bottle</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <RestaurantRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Restaurent</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <LocalCafeRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Coffe Maker</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Breakfast Room</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Barbecue</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div style={{ display: "flex" }}>
-          <div style={{ marginTop: "16px" }}>
-            <MeetingRoomRoundedIcon fontSize="small" />
+        <hr style={{ width: "70%", margin: "auto" }}></hr>
+
+        <div className="tamenities2">
+          <div>
+            <h3>Outdoor facility</h3>
           </div>
-          <div style={{ marginLeft: "3px" }}>
-            <p>Meeting Room</p>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Shops</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ConfirmationNumberRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Ticket Office</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Wedding Facilities</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Smoking Areas</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <SmokeFreeRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Non Smoking Floor</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Lounge</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <SmokeFreeRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Non Smoking</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <LocalLaundryServiceRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Laundry</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr style={{ width: "70%", margin: "auto" }}></hr>
+        <div className="tamenities2">
+          <div>
+            <h3>In room</h3>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <TableChartRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Desk</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Hair Dryer</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <AcUnitRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Air Condition</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <BathtubRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Shower</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div style={{ display: "flex" }}>
-          <div style={{ marginTop: "16px" }}>
-            <ArrowForwardRoundedIcon fontSize="small" />
+        <hr style={{ width: "70%", margin: "auto" }}></hr>
+        <div className="tamenities2">
+          <div>
+            <h3>Leisure</h3>
           </div>
-          <div style={{ marginLeft: "3px" }}>
-            <p>Meeting Facilities</p>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <BathtubRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Suana</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <NoteRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Newspaper</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Library</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <AirlineSeatFlatAngledRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Massage</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Steam Room</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Salon</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Pool Bar</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <ArrowForwardRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Night Club</p>
+              </div>
+            </div>
+
+            <div style={{ display: "flex" }}>
+              <div style={{ marginTop: "16px" }}>
+                <AirlineSeatFlatRoundedIcon fontSize="small" />
+              </div>
+              <div style={{ marginLeft: "3px" }}>
+                <p>Spa</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div></div>
       </div>
     </div>
   );

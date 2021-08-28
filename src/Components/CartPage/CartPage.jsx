@@ -201,11 +201,16 @@ function CartPage({ formData }) {
   const arrr = Array(31).fill(false);
 
   const [data, setData] = useState(dataa);
+  const [form, setForm] = useState(formData);
   const [arr, setArr] = useState(arrr);
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+  useState(() => {
+    setData((pre) => [...pre]);
+    console.log("useusss");
+  }, [formData]);
 
   const handleCheckbox = (e, item) => {
     if (item.id === 4 && arr[item.id] === false) {
@@ -322,6 +327,7 @@ function CartPage({ formData }) {
       </div>
     </div>
   );
+
   if (!formData || !formData.current) {
     return <Redirect to="/"></Redirect>;
   }
