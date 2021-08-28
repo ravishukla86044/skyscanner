@@ -24,7 +24,6 @@ function App() {
           <MainPaymentPage formData={formData} />
         </Route>
       </Switch>
-      <CartPage />
     </div>
   );
 }

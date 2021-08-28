@@ -35,9 +35,11 @@ import { dataa } from "../CartPage/utils/dataa";
 import { useParams } from "react-router-dom";
 import styles from "../../Components/CartPage/Item.module.css";
 import Footer from "../../Components/HomePage/Components/Footer/Footer";
+import { useHistory } from "react-router-dom";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
-  console.log(formData, name);
+  //console.log(formData, name);
+  const history = useHistory();
   const img = formData.current.target.img.slice(0, 6);
   const star = Number(formData.current.target.star);
   const address = formData.current.target.addrs;
@@ -197,7 +199,13 @@ export const HotelDescription = ({ formData }) => {
             <h5 style={{ marginLeft: "50px" }}>Anmeties</h5>
           </div>
 
-          <div className="tprice" style={{ display: "flex", marginLeft: "45%" }}>
+          <div
+            onClick={() => {
+              history.push(`/payment/${name}`);
+            }}
+            className="tprice"
+            style={{ display: "flex", marginLeft: "45%" }}
+          >
             <div>
               <h1>{price}</h1>
             </div>
