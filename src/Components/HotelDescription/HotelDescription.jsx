@@ -27,6 +27,7 @@ import BathtubRoundedIcon from '@material-ui/icons/BathtubRounded';
 import NoteRoundedIcon from '@material-ui/icons/NoteRounded';
 import AirlineSeatFlatAngledRoundedIcon from '@material-ui/icons/AirlineSeatFlatAngledRounded';
 import AirlineSeatFlatRoundedIcon from '@material-ui/icons/AirlineSeatFlatRounded';
+import ThumbUpAltRoundedIcon from '@material-ui/icons/ThumbUpAltRounded';
 import { dataa } from "../CartPage/utils/dataa";
 export const HotelDescription = () => {
     
@@ -44,10 +45,144 @@ export const HotelDescription = () => {
                 })}
             </div>
               
-            <div className="adviser" style={{marginLeft:"10%"}}>
+            <div className="adviser" style={{marginLeft:"10%",marginBottom:"100px"}}>
+                
             <div className="SectionHeader_SectionHeader__1YzyH"><h1 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs"><img alt="TripAdvisor" height="47" className="ReviewsFromTA_ReviewsFromTA__image__1-ngD" src="https://www.tripadvisor.com/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-64600-0.svg"/> reviews</h1></div>
              </div>
+          
+            <div className="belowAdviser">
+                <div>
+                    <img src="https://cdn4.iconfinder.com/data/icons/commercial-and-business-set-2/512/3076_man_c-512.png" alt="" style={{marginTop:"20px"}}/>
+                </div>
 
+                <div>
+                    <h4>Buisiness Travellar</h4>
+                    <p style={{color:"grey", fontSize:"12px"}}>Comment: 9 Apr 2020</p>
+                    <p style={{color:"grey", fontSize:"12px"}}>Stayed in: Feb 2020</p>
+                </div>
+
+                <div>
+                    <div style={{display:"flex"}}>
+                        <h4>5.0/</h4>
+                        <h5>5</h5>
+                        <img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg" style={{marginLeft:"15px"}}alt=""/>
+                    </div>
+
+                    <h3>Amazing visit, 5 star experience</h3>
+                    <p>Had an amazing visit for a week with a colleague.
+The staff was really good, being greeted by Ranjana & Mohini in the morning really put a smile on our face. And they did their best to make us comfortable.
+Pramod was also a really nice guy, did his best to make us comfortable. We also received a cake when we last had a dinner at the restaurant before we left to the airport.
+                        I did have some trouble with the room. Had problems with the toilet in 2 different rooms. They did try their best at resolving this.</p>
+                    <div style={{display:"flex"}}>
+                        <div style={{marginTop:"16px"}}>
+                        <ThumbUpAltRoundedIcon fontSize="small" />
+                        </div>
+                        <div style={{marginLeft:"15px"}}>
+                        <p >Helpfull</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div className="belowAdviser">
+                <div>
+                    <img src="https://static.thenounproject.com/png/851649-200.png" alt="" style={{marginTop:"20px"}}/>
+                </div>
+
+                <div>
+                    <h4>Family Travellar</h4>
+                    <p style={{color:"grey", fontSize:"12px"}}>Comment: 9 Apr 2020</p>
+                    <p style={{color:"grey", fontSize:"12px"}}>Stayed in: Feb 2020</p>
+                </div>
+
+                <div>
+                    <div style={{display:"flex"}}>
+                        <h4>5.0/</h4>
+                        <h5>5</h5>
+                        <img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg" style={{marginLeft:"15px"}}alt=""/>
+                    </div>
+
+                    <h3>Melange - Great food with great staff</h3>
+                    <p>Had an amazing visit for a week with a colleague.
+The staff was really good, being greeted by Ranjana & Mohini in the morning really put a smile on our face. And they did their best to make us comfortable.
+Pramod was also a really nice guy, did his best to make us comfortable. We also received a cake when we last had a dinner at the restaurant before we left to the airport.
+                        I did have some trouble with the room. Had problems with the toilet in 2 different rooms. They did try their best at resolving this.</p>
+                    <div style={{display:"flex"}}>
+                        <div style={{marginTop:"16px"}}>
+                        <ThumbUpAltRoundedIcon fontSize="small" />
+                        </div>
+                        <div style={{marginLeft:"15px"}}>
+                        <p >Helpfull</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+            
+            <div className="belowAdviser">
+                <div>
+                    <img src="https://cdn2.iconfinder.com/data/icons/gulu-vacation/100/travelling_convert-512.png" alt="" style={{marginTop:"20px"}}/>
+                </div>
+
+                <div>
+                    <h4>Anonymous traveller</h4>
+                    <p style={{color:"grey", fontSize:"12px"}}>Comment: 9 Apr 2020</p>
+                    <p style={{color:"grey", fontSize:"12px"}}>Stayed in: Feb 2020</p>
+                </div>
+
+                <div>
+                    <div style={{display:"flex"}}>
+                        <h4>5.0/</h4>
+                        <h5>5</h5>
+                        <img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg" style={{marginLeft:"15px"}} alt=""/>
+                    </div>
+
+                    <h3>Amazing Event Experience</h3>
+                    <p>Had an amazing experience with my daughter's engagement party. The variety of food and quality was really good. Hotel staff was very friendly and they took care of our guests very nicely. They really made them feel very comfortable. Purushotham was very helpful and he really took care of our guests very well. A special Thanks to Chef who cooked the delicious food for our guests.
+Thank you so very much for making our event so memorable.</p>
+                    <div style={{display:"flex"}}>
+                        <div style={{marginTop:"16px"}}>
+                        <ThumbUpAltRoundedIcon fontSize="small" />
+                        </div>
+                        <div style={{marginLeft:"15px"}}>
+                        <p >Helpfull</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div className="belowAdviser">
+                <div>
+                    <img src="https://cdn2.iconfinder.com/data/icons/leisure-entertainment-minimalist-icon-set/100/travel-globe-01-512.png" alt="" style={{marginTop:"20px"}}/>
+                </div>
+
+                <div>
+                    <h4>Anonymous traveller</h4>
+                    <p style={{color:"grey", fontSize:"12px"}}>Comment: 9 Apr 2020</p>
+                    <p style={{color:"grey", fontSize:"12px"}}>Stayed in: Feb 2020</p>
+                </div>
+
+                <div>
+                    <div style={{display:"flex"}}>
+                        <h4>5.0/</h4>
+                        <h5>5</h5>
+                        <img src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg" style={{marginLeft:"15px"}}alt=""/>
+                    </div>
+
+                    <h3>Fabulous stay</h3>
+                    <p>Spent Christmas Eve, Christmas & Boxing Day 2020 here with my family. We had a fantastic stay with wonderful food and excellent service. The staff was extremely accommodating and did everything to make your stay enjoyable. Special mention to Mr. Raju (front desk) and all the Melange restaurant employees (for example, Mr. Promod). Thanks for making our Christmas 2020 memorable, Radisson Blu!</p>
+                    <div style={{display:"flex"}}>
+                        <div style={{marginTop:"16px"}}>
+                        <ThumbUpAltRoundedIcon fontSize="small" />
+                        </div>
+                        <div style={{marginLeft:"15px"}}>
+                        <p >Helpfull</p>
+                        </div>
+                    </div>
+                </div>
+           </div>
             <div className="tcheckIn1">
             <div className="SectionHeader_SectionHeader__1YzyH"><h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">Check in and check out</h3></div>
             </div>

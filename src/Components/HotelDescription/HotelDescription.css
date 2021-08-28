@@ -231,6 +231,24 @@ body{
     .ReviewCardList_ReviewCardList__3LlXu {
         margin-top: 2.25rem;
     }
+    .belowAdviser{
+        width:80%;
+        margin:auto;
+        display:flex;
+        justify-content: space-evenly;
+        text-align:left;
+        
+    }
+    .belowAdviser > div:nth-child(1){
+        width:25%;
+    }
+    .belowAdviser > div:nth-child(2){
+        width:70%;
+    }
+    .belowAdviser > div > img{
+        width:30px;
+        height:30px;
+    }
     
 
 
