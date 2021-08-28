@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import HomeSkyPg from "./Components/HomePage/Home_skyscanner";
 import { useRef } from "react";
 import { HotelDescription } from "./Components/HotelDescription/HotelDescription";
-// import MainPaymentPage from "./Components/Payment-page/MainPaymentPage";
+import MainPaymentPage from "./Components/Payment-page/MainPaymentPage";
 function App() {
   const formData = useRef();
 
@@ -20,11 +20,10 @@ function App() {
         <Route exact path="/hotelsdescription/:name">
           <HotelDescription formData={formData} />
         </Route>
-        {/* <Route exact path="/payment/:name">
+        <Route exact path="/payment/:name">
           <MainPaymentPage formData={formData} />
-        </Route> */}
+        </Route>
       </Switch>
-      <CartPage />
     </div>
   );
 }
