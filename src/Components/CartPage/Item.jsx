@@ -111,7 +111,7 @@ function Item({ data, formData }) {
   return width > 600 ? (
     <div className={styles.Con}>
       <div className={styles.img}>
-        <img src={data.img} alt="" />
+        <img src={data.img[0]} alt="" />
       </div>
       <div>
         <div className={styles.left}>

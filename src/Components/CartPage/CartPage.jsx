@@ -329,7 +329,7 @@ function CartPage({ formData }) {
     <>
       <Heading />
       <Form formData={formData} />
-      <div>
+      <div className={styles.sideBar}>
         <SwipeableDrawer
           anchor="left"
           open={state.left}

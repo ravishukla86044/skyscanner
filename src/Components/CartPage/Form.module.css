@@ -1,7 +1,7 @@
 .sticky {
   position: sticky;
   top: -41px;
-  z-index: 100000;
+  z-index: 1000;
 }
 
 .headBtn {
