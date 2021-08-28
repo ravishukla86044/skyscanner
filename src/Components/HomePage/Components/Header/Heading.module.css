@@ -5,11 +5,11 @@
 }
 .hd1btn {
   border: none !important;
-  font-size: 10px;
-  letter-spacing: 0ch;
+  font-size: 10px !important;
+  letter-spacing: 0ch !important;
 }
 .hd2btn {
-  display: none;
+  display: none !important;
 }
 .skyscanLogo {
   width: 200px !important;
