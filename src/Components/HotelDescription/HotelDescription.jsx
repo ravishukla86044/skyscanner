@@ -28,20 +28,90 @@ import NoteRoundedIcon from "@material-ui/icons/NoteRounded";
 import AirlineSeatFlatAngledRoundedIcon from "@material-ui/icons/AirlineSeatFlatAngledRounded";
 import AirlineSeatFlatRoundedIcon from "@material-ui/icons/AirlineSeatFlatRounded";
 import ThumbUpAltRoundedIcon from "@material-ui/icons/ThumbUpAltRounded";
+import StarRoundedIcon from "@material-ui/icons/StarRounded";
+import Button from "@material-ui/core/Button";
+import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { dataa } from "../CartPage/utils/dataa";
 import { useParams } from "react-router-dom";
+import styles from "../../Components/CartPage/Item.module.css";
+import Footer from "../../Components/HomePage/Components/Footer/Footer";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
-  console.log(formData, name, dataa);
-  const img = [
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/443227701/443227701_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/619143134/619143134_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/351852349/351852349_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/443227700/443227700_960x576.jpg",
-  ];
+  console.log(formData, name);
+  const img = formData.current.target.img.slice(0, 6);
+  const star = Number(formData.current.target.star);
+  const address = formData.current.target.addrs;
+  const rating = formData.current.target.rating;
+  const clean = formData.current.target.cleanliness;
+  const review = formData.current.target.reviews;
+  const price = Number(formData.current.target.lowPrice.price);
+  //  console.log(price);
+  console.log(star);
 
+  function Star({ n }) {
+    let arr = [];
+    for (let i = 1; i <= n; i++) {
+      arr.push(1);
+    }
+    return (
+      <div className={styles.star}>
+        <div>
+          {arr.map((item) => (
+            <StarRoundedIcon style={{ fontSize: "80px" }} />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  function Dots({ n }) {
+    n = Number(n);
+    let floor = Math.floor(n);
+    let arr = [];
+    var i = 0;
+    while (i < 5) {
+      arr.push(0);
+      i++;
+    }
+    var i = 0;
+    while (i < 5) {
+      if (i < floor) {
+        arr[i] = 1;
+      } else if (n > floor) {
+        arr[i] = 0.5;
+        break;
+      }
+      i++;
+    }
+    //arr.shift();
+    return (
+      <div className={styles.Dot}>
+        {arr.map((item) => {
+          if (item === 1) {
+            return (
+              <div className={styles.full}>
+                <div></div>
+              </div>
+            );
+          } else if (item > 0) {
+            return (
+              <div className={styles.half}>
+                <div></div>
+              </div>
+            );
+          } else if (item === 0) {
+            return (
+              <div>
+                <div></div>
+              </div>
+            );
+          }
+        })}
+      </div>
+    );
+  }
+
+  // console.log(img);
   return (
     <div>
       <div className="toutterContainer">
@@ -53,6 +123,92 @@ export const HotelDescription = ({ formData }) => {
             </div>
           );
         })}
+      </div>
+
+      <div className="tbelowBanner">
+        <div className="SectionHeader_SectionHeader__1YzyH">
+          <h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
+            {name}
+          </h3>
+        </div>
+        <div style={{ marginTop: "16px", marginLeft: "5%" }}>
+          <div className="SectionHeader_SectionHeader__1YzyH">
+            <h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
+              <Star n={star} />
+            </h3>
+          </div>
+        </div>
+      </div>
+
+      <div className="thotelAdress">
+        <p style={{ marginLeft: "10%", fontSize: "18px", fontFamily: "serif" }}>{address}</p>
+      </div>
+
+      <div className="tbelowAdress">
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            style={{ backgroundColor: "rgb(65,216,161)", borderRadius: "50px" }}
+          >
+            {rating}
+          </Button>
+        </div>
+        <div>
+          <div
+            style={{ marginLeft: "35px", marginTop: "2px", marginRight: "20px", width: "200px" }}
+          >
+            <Dots n={rating} />
+            <p
+              style={{
+                fontSize: "18px",
+                fontFamily: "serif",
+                textDecoration: "underline",
+                color: "blue",
+              }}
+            >
+              Based on {review} reviews
+            </p>
+          </div>
+        </div>
+
+        <div
+          style={{
+            width: "150px",
+            height: "50px",
+            borderRadius: "10px",
+            backgroundColor: "lightGray",
+            textAlign: "center",
+            fontFamily: "serif",
+          }}
+        >
+          <p>Cleanliness {clean}/5</p>
+        </div>
+      </div>
+      <div className="outterTpay" style={{ width: "80%", margin: "auto", marginBottom: "150px" }}>
+        <hr></hr>
+        <div className="tpay" style={{ display: "flex" }}>
+          <div style={{ display: "flex" }}>
+            <h5>Deals</h5>
+            <h5 style={{ marginLeft: "50px" }}>Reviews</h5>
+            <h5 style={{ marginLeft: "50px" }}>Location</h5>
+            <h5 style={{ marginLeft: "50px" }}>Details</h5>
+            <h5 style={{ marginLeft: "50px" }}>Anmeties</h5>
+          </div>
+
+          <div className="tprice" style={{ display: "flex", marginLeft: "45%" }}>
+            <div>
+              <h1>{price}</h1>
+            </div>
+            <div style={{ marginTop: "16px", marginLeft: "5px" }}>
+              <Button color="primary" variant="contained" size="small">
+                <ArrowDownwardIcon />
+              </Button>
+            </div>
+          </div>
+        </div>
+        <hr></hr>
       </div>
 
       <div className="adviser" style={{ marginLeft: "10%", marginBottom: "100px" }}>
@@ -815,6 +971,8 @@ export const HotelDescription = ({ formData }) => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

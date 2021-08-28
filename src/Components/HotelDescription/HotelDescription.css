@@ -199,6 +199,7 @@ p {
 }
 .biggeranemities {
   margin-top: 20px;
+  margin-bottom: 150px;
 }
 .SectionHeader_SectionHeader__1YzyH {
   display: flex;
@@ -239,4 +240,18 @@ p {
 .belowAdviser > div > img {
   width: 30px;
   height: 30px;
+}
+.tbelowBanner {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tbelowAdress {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 80px;
 }
