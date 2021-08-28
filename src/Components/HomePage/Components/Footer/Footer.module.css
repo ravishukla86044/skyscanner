@@ -1,0 +1,41 @@
+.gridHotMainCont {
+  background-color: rgb(17, 18, 54);
+  min-width: 100%;
+  min-height: 500px;
+}
+.gridFootDivMain {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 20px;
+  padding: 50px 0;
+}
+.gridFootDivMain > div > h3 {
+  margin-left: 35px;
+  font-size: 24px;
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: rgb(255, 123, 89);
+}
+.gridFootDivMain > div > ul {
+  list-style-type: none;
+}
+.gridFootDivMain > div > ul > li {
+  margin: 10px 0;
+}
+.gridFootDivMain > div > ul > li > a {
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  color: white;
+}
+@media only screen and (min-width: 992px) {
+  .gridFootDivMain {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 20px;
+    padding: 50px 0;
+  }
+}

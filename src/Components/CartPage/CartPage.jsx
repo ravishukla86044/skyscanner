@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Redirect } from "react-router-dom";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
@@ -7,6 +8,10 @@ import { ItemPage } from "./ItemPage";
 import styles from "./CartPage.module.css";
 import { Star } from "./Item";
 import { dataa } from "./utils/dataa";
+import Heading from "../HomePage/Components/Header/Heading";
+import Footer from "../HomePage/Components/Footer/Footer";
+
+import { Form } from "./Form";
 
 const useStyles = makeStyles({
   list: {
@@ -192,14 +197,20 @@ function ListHeading({ heading }) {
   return <div className={styles.listHeading}>{heading}</div>;
 }
 
-function CartPage() {
+function CartPage({ formData }) {
   const arrr = Array(31).fill(false);
+
   const [data, setData] = useState(dataa);
+  const [form, setForm] = useState(formData);
   const [arr, setArr] = useState(arrr);
   const classes = useStyles();
   const [state, setState] = React.useState({
     left: false,
   });
+  useState(() => {
+    setData((pre) => [...pre]);
+    console.log("useusss");
+  }, [formData]);
 
   const handleCheckbox = (e, item) => {
     if (item.id === 4 && arr[item.id] === false) {
@@ -317,9 +328,14 @@ function CartPage() {
     </div>
   );
 
+  if (!formData || !formData.current) {
+    return <Redirect to="/"></Redirect>;
+  }
   return (
     <>
-      <div>
+      <Heading />
+      <Form formData={formData} />
+      <div className={styles.sideBar}>
         <SwipeableDrawer
           anchor="left"
           open={state.left}
@@ -329,7 +345,14 @@ function CartPage() {
           {list("left")}
         </SwipeableDrawer>
       </div>
-      <ItemPage toggleDrawer={toggleDrawer} data={data} setData={setData} dataa={dataa} />
+      <ItemPage
+        formData={formData}
+        toggleDrawer={toggleDrawer}
+        data={data}
+        setData={setData}
+        dataa={dataa}
+      />
+      <Footer />
     </>
   );
 }

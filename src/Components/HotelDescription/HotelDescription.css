@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     margin:0px;padding:0px;
 }
@@ -42,6 +43,50 @@ body{
     width: 100%;
     height:100%;
     display:block;
+=======
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.toutterContainer {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: 60px 60px 60px 60px 60px 60px 60px 60px;
+  grid-template-areas:
+    "a a a a a a a a a a b b b b b b e e e e"
+    "a a a a a a a a a a b b b b b b e e e e"
+    "a a a a a a a a a a b b b b b b e e e e"
+    "a a a a a a a a a a b b b b b b e e e e"
+    "a a a a a a a a a a b b b b b b f f f f"
+    "a a a a a a a a a a c c c d d d f f f f"
+    "a a a a a a a a a a c c c d d d f f f f"
+    "a a a a a a a a a a c c c d d d f f f f";
+}
+.ttopItem1 {
+  background: blue;
+  grid-area: a;
+}
+.ttopItem2 {
+  grid-area: b;
+}
+.ttopItem3 {
+  grid-area: c;
+}
+.ttopItem4 {
+  grid-area: d;
+}
+.ttopItem5 {
+  grid-area: e;
+}
+.ttopItem6 {
+  grid-area: f;
+}
+.toutterContainer > div > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+>>>>>>> ddbd79673834854ae088d707d75137d2aac41cc8
 }
 
 /*"a a a a a a a a a b b b b b b e e e e"
@@ -53,6 +98,7 @@ body{
      "a a a a a a a a a c c c d d d f f f f"
      "a a a a a a a a a c c c d d d f f f f"*/
 
+<<<<<<< HEAD
      .SectionHeader_SectionHeader__1YzyH {
         display: flex;
         flex-direction: row;
@@ -261,3 +307,194 @@ body{
 
 
  
+=======
+.SectionHeader_SectionHeader__1YzyH {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+}
+.BpkText_bpk-text__1KRVP {
+  margin: 0;
+}
+.BpkText_bpk-text--xxxl__1QpyP {
+  font-size: 2.25rem;
+  line-height: 2.9375rem;
+  font-weight: 400;
+}
+.SectionHeader_SectionHeader__title__2lkEs {
+  font-weight: 500;
+}
+.BpkText_bpk-text__1KRVP {
+  margin: 0;
+}
+.BpkText_bpk-text--xl__5FNve {
+  font-size: 1.5rem;
+  line-height: 1.9375rem;
+  font-weight: 400;
+}
+.CheckInCheckOut_CheckInCheckOut__time__1Nukj {
+  margin-top: 1.125rem;
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.tcheckIn2 {
+  margin-left: 10%;
+  margin-top: 50px;
+  margin-bottom: 120px;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+}
+.tcheckIn2 > div:nth-child(2) {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.tcheckIn1 {
+  margin-left: 10%;
+}
+.tgood {
+  margin-left: 10%;
+}
+.tbelowgood1 {
+  margin-top: 40px;
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  justify-content: flex-start;
+}
+.tbelowgood1 > div:nth-child(2) {
+  margin-left: 4%;
+  width: 32%;
+  text-align: left;
+}
+.tbelowgood4 > div:nth-child(2) {
+  margin-left: 4%;
+  width: 90%;
+  text-align: left;
+  font-weight: 400;
+}
+
+.tbelowgood5 > div:nth-child(2) {
+  margin-left: 4%;
+  width: 120%;
+  text-align: left;
+}
+.tbelowgood1 > div:nth-child(3) {
+  margin-left: 4%;
+  text-align: left;
+}
+.tcardstypes > div > img {
+  padding: 5px;
+}
+.tcardstypes {
+  margin-top: 15px;
+}
+.tbelowgood {
+  width: 80%;
+  margin: auto;
+  background-color: rgba(241, 242, 248, 0.5);
+}
+.tbelowgood > hr {
+  width: 90%;
+  margin: auto;
+}
+.thoteldescription {
+  margin-top: 170px;
+  margin-bottom: 70px;
+}
+.thoteldescription > div > h3 {
+  margin-bottom: 70px;
+  text-align: left;
+  margin-left: 10%;
+}
+.tamenities1 {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.tamenities1 > div {
+  width: 14%;
+  background: rgba(195, 199, 224, 0.5);
+}
+.HotelDescription_HotelDescription__hotelName__3oGPv {
+  margin-top: 1.875rem;
+  margin-bottom: 0.375rem;
+  font-size: 1.5rem;
+}
+
+.BpkText_bpk-text--xxl__1Sso6 {
+  font-size: 1.875rem;
+  line-height: 2.4375rem;
+  font-weight: 400;
+}
+.DescriptionContent_DescriptionContent__text__G8qNF {
+  display: -webkit-box;
+  margin: 0;
+  color: #444560;
+  white-space: pre-wrap;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.tamenities2 {
+  width: 80%;
+  margin: auto;
+
+  display: flex;
+  justify-content: space-around;
+  background: whitesmoke;
+}
+.biggeranemities {
+  margin-top: 20px;
+}
+.SectionHeader_SectionHeader__1YzyH {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+}
+.SectionHeader_SectionHeader__title__2lkEs {
+  font-weight: 500;
+}
+
+.BpkText_bpk-text--xxxl__1QpyP {
+  font-size: 2.25rem;
+  line-height: 2.9375rem;
+  font-weight: 400;
+}
+.ReviewsFromTA_ReviewsFromTA__image__1-ngD {
+  margin-bottom: 0.25rem;
+  vertical-align: middle;
+}
+.ReviewCardList_ReviewCardList__3LlXu {
+  margin-top: 2.25rem;
+}
+.belowAdviser {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: left;
+}
+.belowAdviser > div:nth-child(1) {
+  width: 25%;
+}
+.belowAdviser > div:nth-child(2) {
+  width: 70%;
+}
+.belowAdviser > div > img {
+  width: 30px;
+  height: 30px;
+}
+>>>>>>> ddbd79673834854ae088d707d75137d2aac41cc8

@@ -1,0 +1,55 @@
+.headBtn {
+  display: flex;
+}
+.frontBoxDiv {
+  margin-top: -10px;
+  background-image: url("https://js.skyscnr.com/sttc/hotels-website/hotels-website/static/media/fb52ac4eda2ad98d31de60d87b1146a2.4c4c15f5.jpg");
+  width: 100%;
+  height: 120%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.frontBoxDivCont {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(230, 231, 230, 0.1);
+}
+.headContFrnt {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.headContFrnt > h1 {
+  margin: 0%;
+  padding: 30px 10px;
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 4.875rem;
+  color: aliceblue;
+}
+.fBCBg {
+  background-color: rgb(17, 18, 54);
+  border-radius: 15px;
+  padding: 20px;
+}
+.fBCBg > div > div {
+  margin: 10px;
+}
+.heDivLab {
+  text-align: left;
+  padding: 7px;
+  background-color: rgb(17, 18, 54);
+  color: aliceblue;
+  font-family: "Skyscanner Relative", -apple-system, BlinkMacSystemFont, Roboto,
+    Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+@media only screen and (min-width: 992px) {
+  .fBCBg > div > div {
+    margin: 10px 0px;
+  }
+  .frontBoxDiv {
+    height: 500px;
+  }
+}
