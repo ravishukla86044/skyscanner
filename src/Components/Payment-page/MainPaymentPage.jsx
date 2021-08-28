@@ -1,5 +1,5 @@
 import React from 'react'
-
+import styles from "./Mainpage.module.css"
 import HotelsDetails from './HotelsDetails';
 import MainGuest from './MainGuest';
 import Navbar from './Navbar';
@@ -9,15 +9,15 @@ const MainPaymentPage = () => {
 
         <>
         <Navbar/>
-        <div style={{display:"flex",justifyContent:"space-around",width:"70%",margin:"auto"}}>
+        <div  className={styles.mainPayment} >
             
-            <div style={{width:"50%"}}>
+            <div className={styles.mainguest}>
                 <MainGuest/>
                
                 <PaymentMethods/>
             </div>
 
-             <div style={{width:"50%"}}>
+             <div className={styles.hoteldetails}>
                  <HotelsDetails/>
              </div>
         </div>

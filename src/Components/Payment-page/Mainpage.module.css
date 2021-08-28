@@ -1,0 +1,26 @@
+.mainPayment{
+    display:flex;
+    justify-content:space-around;
+    width:70%;
+    margin:auto;
+}
+.mainguest{
+    width: 50%;
+}
+.hoteldetails{
+    width: 50%;
+}
+
+@media (max-width:1000px){
+    .mainPayment{
+      flex-direction:column-reverse;
+    }
+
+    .hoteldetails>div{
+       background-color:red;
+       width: 100%;
+       box-sizing: border-box;
+       padding:0px !important;
+       margin: 0px -30px;
+    }
+}
