@@ -105,6 +105,8 @@ function Item({ data, formData }) {
 
   const handleDetails = (data) => {
     formData.current.target = data;
+    formData.current.target.TotolPrice =
+      data.lowPrice.price * Math.ceil(formData.current.stays / 2) * diffDays;
     history.push(`/hotelsdescription/${data.name}`);
   };
 
