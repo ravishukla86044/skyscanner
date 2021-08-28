@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+
 import axios from "axios";
 
 
@@ -40,7 +40,13 @@ const MainGuest = () => {
   const [guestonelastName, setguestoneLastName] = useState("");
   const [guesttwofirstName, setguesttwoFirstName] = useState("");
   const [guesttwolastName, setguesttwoLastName] = useState("");
-  const [colors,setColor] =useState("#4A96FF")
+  // const [colors,setColor] =useState("#4A96FF")
+  const [rightsign,setRightsign] = useState("icons8-checked-40.png");
+  const[addDetails,setaddDetails] = useState(false)
+
+  useEffect(()=>{
+     setGuest(!guest)
+  },[])
   const payload = {
     name,
     email,
@@ -48,7 +54,7 @@ const MainGuest = () => {
     guestone: `${guestonefirstName} ${guestonelastName}`,
     guesttwo: `${guesttwofirstName} ${guesttwolastName}`,
   };
-  const classes = useStyles(colors);
+  const classes = useStyles();
 
   const handlePlush = () => {
     setGuest(!guest);
@@ -66,7 +72,7 @@ const MainGuest = () => {
       setguestoneLastName("")
       setguesttwoFirstName("")
       setguesttwoLastName("")
-    
+      setaddDetails(!addDetails)
 
   }
 
@@ -94,6 +100,19 @@ const MainGuest = () => {
   const Namepara = styled.p`
     margin-left: 10px;
   `;
+  const Buttonadd = styled.button`
+    
+    height:37px;
+    width: 30%;
+    background-color:#4A96FF;
+    color:white;
+    border:none;
+    font-size: medium;
+    border-radius:2px;
+    margin-left: 10px;
+
+  
+  `
   return (
     <>
       <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
@@ -228,9 +247,9 @@ const MainGuest = () => {
       </form>
 
       <div style={{marginTop:"20px",marginLeft:"5px"}}>
-        <Button className={classes.submitbtn} variant="contained" onClick={handleSubmit}>
-          Add Details
-        </Button>
+        <Buttonadd  onClick={handleSubmit}>
+         {addDetails?<img height="35px" width="35px" src={rightsign}/>:"Add Details"}
+        </Buttonadd>
       </div>
     </>
   );
