@@ -15,6 +15,8 @@ const HotelsDetails = () => {
     height: auto;
     background-color: #f1f2f8;
     padding: 40px 40px 40px 40px;
+   display: flex;
+   flex-direction: column;
     hr {
       width: 100%;
       height: 0.1px;
@@ -30,6 +32,8 @@ const HotelsDetails = () => {
 
     padding: 20px 25px 25px 25px;
     border-radius: 6px;
+    display: flex;
+    flex-direction: column;
   `;
   const Topdes = styled.div`
     display: flex;
@@ -79,9 +83,11 @@ const HotelsDetails = () => {
     margin: 20px 0px 20px 0px;
     div {
       height: 50px;
-      width: 200px;
+      width: 180px;
       display: flex;
       gap: 10px;
+     
+      
 
       p {
         margin-top: -2px;
@@ -148,7 +154,7 @@ const HotelsDetails = () => {
   `;
 
   return (
-    <>
+    <div>
    
       {hotelsData.map((item) => {
         return (
@@ -223,7 +229,7 @@ const HotelsDetails = () => {
                   </div>
 
                   <div>
-                    <img height="20px" src="bed.png" />
+                    <img height="20px" width="22" src="bed.png" />
                     <p>1 x king bed, 2 x Semi-double bed</p>
                   </div>
 
@@ -237,12 +243,12 @@ const HotelsDetails = () => {
                     <p>Non-refundable</p>
                   </div>
                   <div>
-                    <img height="20px" src="doller.png" />
+                    <img height="20px"  width="25" src="doller.png" />
                     <p>Pay now</p>
                   </div>
 
                   <div>
-                    <img height="20px" src="guest.png" />
+                    <img height="20px"  src="guest.png" />
                     <p>Up to 2 guests</p>
                   </div>
 
@@ -304,7 +310,7 @@ const HotelsDetails = () => {
           </HotelsDes>
         );
       })}
-    </>
+    </div>
   );
 };
 

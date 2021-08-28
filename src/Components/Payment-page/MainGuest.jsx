@@ -12,10 +12,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: 400,
     },
-    textfield: {
-      display: "flex",
-      flexDirection: "column",
-    },
+   
     details: {
       color: "#4A96FF",
     },
@@ -83,6 +80,9 @@ const MainGuest = () => {
   `;
   const Underguest = styled.div`
     line-height: 20px;
+    p{
+      color: #68697f;
+    }
   `;
   const Guestpara = styled.div`
     display: flex;
@@ -99,6 +99,11 @@ const MainGuest = () => {
 
   const Namepara = styled.p`
     margin-left: 10px;
+    padding-bottom: 1.125rem;
+    color: #68697f;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25rem;
   `;
   const Buttonadd = styled.button`
     
@@ -112,6 +117,10 @@ const MainGuest = () => {
     margin-left: 10px;
 
   
+  `
+  const Btndiv = styled.div`
+    margin-top:20px;
+    marginLeft:5px
   `
   return (
     <>
@@ -134,7 +143,7 @@ const MainGuest = () => {
           </Guestplush>
         </Guest>
 
-        <div className={classes.textfield}>
+        <div >
           <div>
             <Namepara>First Name</Namepara>
             <TextField
@@ -246,11 +255,11 @@ const MainGuest = () => {
         </div>
       </form>
 
-      <div style={{marginTop:"20px",marginLeft:"5px"}}>
+      <Btndiv>
         <Buttonadd  onClick={handleSubmit}>
          {addDetails?<img height="35px" width="35px" src={rightsign}/>:"Add Details"}
         </Buttonadd>
-      </div>
+      </Btndiv>
     </>
   );
 };
