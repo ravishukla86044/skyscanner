@@ -37,7 +37,7 @@
   color: aliceblue;
 }
 .customCheckBoxDiv {
-  background-color: rgb(17, 18, 54);
+  background-color: rgb(17, 18, 54) !important;
 }
 .fBCBg {
   background-color: rgb(17, 18, 54);
