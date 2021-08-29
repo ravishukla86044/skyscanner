@@ -85,11 +85,7 @@ export default function PaymentForm() {
     }
   };
 
-  // const history= useHistory()
-  //     const handleSuccess =()=>{
-
-  // history.replace('/user/orders')
-  //     }
+ 
   return (
     <>
       {!success ? (

@@ -1,14 +1,28 @@
 .mainPayment {
   display: flex;
   justify-content: space-around;
-  width: 70%;
-  margin: auto;
+  width: 85%;
+  margin-left:15%;
+  
 }
 .mainguest {
-  width: 50%;
+  width: 35%;
 }
 .hoteldetails {
-  width: 50%;
+  width: 60%;
+}
+
+.footerpayment{
+    margin-top:60px;
+    width:100%;
+    margin-left: 15px;
+    color: #68697f;
+    font-size: .75rem;
+    line-height: 1.25rem;
+ 
+}
+.footerpayment>a{
+    text-decoration: none;
 }
 
 @media (max-width: 1000px) {
@@ -17,10 +31,10 @@
   }
 
   .hoteldetails > div {
-    background-color: red;
-    width: 100%;
+  
+  
     box-sizing: border-box;
-    padding: 0px !important;
+    padding: 20px !important;
     margin: 0px -30px;
   }
 }

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import styled from "styled-components";
-import Button from "@material-ui/core/Button";
+
 import axios from "axios";
 
 
@@ -12,10 +12,7 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: 400,
     },
-    textfield: {
-      display: "flex",
-      flexDirection: "column",
-    },
+   
     details: {
       color: "#4A96FF",
     },
@@ -40,7 +37,13 @@ const MainGuest = () => {
   const [guestonelastName, setguestoneLastName] = useState("");
   const [guesttwofirstName, setguesttwoFirstName] = useState("");
   const [guesttwolastName, setguesttwoLastName] = useState("");
-  const [colors,setColor] =useState("#4A96FF")
+  // const [colors,setColor] =useState("#4A96FF")
+  const [rightsign,setRightsign] = useState("https://i.ibb.co/rdFFcWG/icons8-checked-40.png");
+  const[addDetails,setaddDetails] = useState(false)
+
+  useEffect(()=>{
+     setGuest(!guest)
+  },[])
   const payload = {
     name,
     email,
@@ -48,7 +51,7 @@ const MainGuest = () => {
     guestone: `${guestonefirstName} ${guestonelastName}`,
     guesttwo: `${guesttwofirstName} ${guesttwolastName}`,
   };
-  const classes = useStyles(colors);
+  const classes = useStyles();
 
   const handlePlush = () => {
     setGuest(!guest);
@@ -66,7 +69,7 @@ const MainGuest = () => {
       setguestoneLastName("")
       setguesttwoFirstName("")
       setguesttwoLastName("")
-    
+      setaddDetails(!addDetails)
 
   }
 
@@ -77,6 +80,9 @@ const MainGuest = () => {
   `;
   const Underguest = styled.div`
     line-height: 20px;
+    p{
+      color: #68697f;
+    }
   `;
   const Guestpara = styled.div`
     display: flex;
@@ -93,9 +99,32 @@ const MainGuest = () => {
 
   const Namepara = styled.p`
     margin-left: 10px;
+    padding-bottom: 1.125rem;
+    color: #68697f;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25rem;
   `;
+  const Buttonadd = styled.button`
+    
+    height:37px;
+    width: 30%;
+    background-color:#4A96FF;
+    color:white;
+    border:none;
+    font-size: medium;
+    border-radius:2px;
+    margin-left: 10px;
+
+  
+  `
+  const Btndiv = styled.div`
+    margin-top:20px;
+    marginLeft:5px
+  `
   return (
     <>
+    
       <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Guest>
           <Underguest>
@@ -103,7 +132,7 @@ const MainGuest = () => {
               <h2>Main guest</h2>
               <div>
                 {" "}
-                <img height="20px" src="main guest.png" />
+                <img height="20px" src="https://i.ibb.co/fqgzJnn/main-guest.png" />
               </div>
             </Guestpara>
 
@@ -111,11 +140,11 @@ const MainGuest = () => {
           </Underguest>
 
           <Guestplush onClick={handlePlush}>
-            <img src="plush sign.png" />
+            <img src="https://i.ibb.co/XbGn17r/plush-sign.png" />
           </Guestplush>
         </Guest>
 
-        <div className={classes.textfield}>
+        <div >
           <div>
             <Namepara>First Name</Namepara>
             <TextField
@@ -152,13 +181,13 @@ const MainGuest = () => {
                       <h2>Guest2</h2>
                       <div>
                         {" "}
-                        <img height="20px" src="main guest.png" />
+                        <img height="20px" src="https://i.ibb.co/fqgzJnn/main-guest.png" />
                       </div>
                     </Guestpara>
                   </Underguest>
 
                   <Guestplush onClick={handlePlush}>
-                    <img src="minus sign.png" />
+                    <img src="https://i.ibb.co/Ksz8qBk/minus-sign.png" />
                   </Guestplush>
                 </Guest>
                 <Namepara>First Name</Namepara>
@@ -227,11 +256,11 @@ const MainGuest = () => {
         </div>
       </form>
 
-      <div style={{marginTop:"20px",marginLeft:"5px"}}>
-        <Button className={classes.submitbtn} variant="contained" onClick={handleSubmit}>
-          Add Details
-        </Button>
-      </div>
+      <Btndiv>
+        <Buttonadd  onClick={handleSubmit}>
+         {addDetails?<img height="35px" width="35px" src={rightsign}/>:"Add Details"}
+        </Buttonadd>
+      </Btndiv>
     </>
   );
 };
