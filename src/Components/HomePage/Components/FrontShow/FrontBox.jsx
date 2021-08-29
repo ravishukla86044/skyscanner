@@ -143,13 +143,17 @@ const FrontBox = ({ formData }) => {
                 <Grid item lg={2} xs={6} sm={3}>
                   <Paper className={classes.paper}>
                     <div className={styles.heDivLab}>Check-in</div>
-                    <Stdt formData={formData} />
+                    <div className={styles.customDates}>
+                      <Stdt formData={formData} />
+                    </div>
                   </Paper>
                 </Grid>
                 <Grid item lg={2} xs={6} sm={3}>
                   <Paper className={classes.paper}>
                     <div className={styles.heDivLab}>Check-out</div>
-                    <Ledt formData={formData} />
+                    <div className={styles.customDates}>
+                       <Ledt formData={formData} />
+                    </div>
                   </Paper>
                 </Grid>
                 <Grid item lg={4} xs={12} sm={5}>
