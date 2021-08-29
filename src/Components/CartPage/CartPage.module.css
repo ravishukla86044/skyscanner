@@ -1,7 +1,12 @@
+.sideBar {
+}
+
 .list {
   padding: 1.5rem 1.5rem 4.5rem;
   width: 17.25rem;
   background: #f1f2f8;
+  position: relative !important;
+  z-index: 2000000 !important;
 }
 .listBox {
   margin-bottom: 1.375rem;

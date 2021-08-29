@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
+import { Map } from "./Map";
 
-function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
+function ItemPage({ toggleDrawer, data, setData, dataa, formData, form }) {
   const [low, setLow] = useState(false);
   const [pBool, setpBool] = useState(false);
   const [sBool, setSBool] = useState(false);
-
+  console.log(form, "this is form in itempage");
   const handleBottom = (e, n) => {
     setpBool(false);
     setSBool(false);
@@ -68,7 +69,7 @@ function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
             </div>
             <div>
               <div>
-                <p>{`${data.length} hotels found in Bangaluru`}</p>
+                <p>{`${data.length} hotels found in ${form.location}`}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -141,11 +142,36 @@ function ItemPage({ stay = 3, toggleDrawer, data, setData, dataa }) {
               Distance
             </div>
           </div>
-          <div></div>
+          <div className={styles.map}>
+            <Map
+              center={{ lat: 12.9716, lng: 77.5946 }}
+              zoom={15}
+              places={[
+                {
+                  id: 1,
+                  name: "Radisson Blu Bengaluru Outer Ring Road",
+                  latitude: "12.9726",
+                  longitude: "77.5959",
+                },
+                {
+                  id: 2,
+                  name: "The Park Bangalore",
+                  latitude: "12.9736",
+                  longitude: "77.5969",
+                },
+                {
+                  id: 3,
+                  name: "Hilton Bangalore Embassy GolfLinks",
+                  latitude: "12.9756",
+                  longitude: "77.5979",
+                },
+              ]}
+            />
+          </div>
         </div>
         <div className={styles.ItemsDiv}>
           {data.map((item) => (
-            <Item data={item} stay={stay} />
+            <Item data={item} formData={formData} form={form} />
           ))}
         </div>
       </div>

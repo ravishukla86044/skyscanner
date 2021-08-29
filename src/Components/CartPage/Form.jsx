@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./FrontBox.module.css";
+import React, { useState } from "react";
+import styles from "./Form.module.css";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import FlightIcon from "@material-ui/icons/Flight";
@@ -9,19 +9,21 @@ import Container from "@material-ui/core/Container";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 // import TextField from '@material-ui/core/TextField';
-import LSearch1 from "./LSearch1";
-import Stdt from "./Stdt";
-import Ledt from "./Ledt";
-import GuestSelect from "./GuestSelect";
-import CheckB from "./CheckB";
-import CustBtn from "./CustBtn";
+import LSearch1 from "../HomePage/Components/FrontShow/LSearch1";
+import Stdt from "../HomePage/Components/FrontShow/Stdt";
+import Ledt from "../HomePage/Components/FrontShow/Ledt";
+import GuestSelect from "../HomePage/Components/FrontShow/GuestSelect";
+import cx from "classnames";
+import CustBtn from "../HomePage/Components/FrontShow/CustBtn";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const BootstrapButton2 = withStyles({
   root: {
     boxShadow: "none",
     textTransform: "none",
-    fontSize: 16,
-    padding: "6px 12px",
+    padding: "7px 7px",
+    fontSize: "14px",
     border: "1px solid",
     lineHeight: 1.5,
     backgroundColor: "rgb(2,18,44)",
@@ -39,8 +41,8 @@ const BootstrapButton2 = withStyles({
       '"Segoe UI Symbol"',
     ].join(","),
     "&:hover": {
-      backgroundColor: "#162f57",
-      borderColor: "#213a61",
+      backgroundColor: "rgb(4, 39, 89)",
+      borderColor: "rgb(4, 39, 89)",
       boxShadow: "none",
     },
     "&:active": {
@@ -58,8 +60,8 @@ const BootstrapButton = withStyles({
   root: {
     boxShadow: "none",
     textTransform: "none",
-    fontSize: 16,
-    padding: "6px 12px",
+    padding: "7px 7px",
+    fontSize: "14px",
     border: "1px solid",
     lineHeight: 1.5,
     backgroundColor: "#0063cc",
@@ -94,15 +96,29 @@ const BootstrapButton = withStyles({
 
 const useStyles = makeStyles((theme) => ({
   margin: {
-    margin: theme.spacing(1),
+    margin: "5px 5px",
+    marginLeft: "0px",
   },
 }));
 
-const FrontBox = ({ formData }) => {
+const Form = ({ formData, form, setForm }) => {
+  const history = useHistory();
+  const [newD, setnewD] = useState({ ...formData.current });
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setnewD((pre) => ({ ...pre, [name]: value }));
+    formData.current[name] = value;
+  };
+  const handleClick = () => {
+    setForm((pre) => ({ ...formData.current }));
+    axios.put("http://localhost:8000/userData/1", formData.current).then((res) => {
+      console.log("success");
+    });
+  };
   const classes = useStyles();
   return (
-    <div>
-      <Container maxWidth="lg" className={styles.headBtn}>
+    <div className={styles.sticky}>
+      <div maxWidth="lg" className={styles.headBtn}>
         <BootstrapButton
           variant="contained"
           color="primary"
@@ -125,54 +141,45 @@ const FrontBox = ({ formData }) => {
           disableRipple
           className={classes.margin}
         >
-          <DriveEtaIcon /> Car Rental
+          <DriveEtaIcon /> Car Hire
         </BootstrapButton>
-      </Container>
+      </div>
       <div className={styles.frontBoxDiv}>
         <div className={styles.frontBoxDivCont}>
-          <Container maxWidth="lg" className={styles.headContFrnt}>
-            <h1>Find your place to stay</h1>
-            <div className={styles.fBCBg}>
-              <Grid container spacing={1}>
-                <Grid item lg={4} xs={12}>
-                  <Paper className={classes.paper}>
-                    <div className={styles.heDivLab}>Where would you like to stay?</div>
-                    <LSearch1 formData={formData} />
-                  </Paper>
-                </Grid>
-                <Grid item lg={2} xs={6} sm={3}>
-                  <Paper className={classes.paper}>
-                    <div className={styles.heDivLab}>Check-in</div>
-                    <Stdt formData={formData} />
-                  </Paper>
-                </Grid>
-                <Grid item lg={2} xs={6} sm={3}>
-                  <Paper className={classes.paper}>
-                    <div className={styles.heDivLab}>Check-out</div>
-                    <Ledt formData={formData} />
-                  </Paper>
-                </Grid>
-                <Grid item lg={4} xs={12} sm={5}>
-                  <Paper className={classes.paper}>
-                    <div className={styles.heDivLab}>Guests and rooms</div>
-                    <GuestSelect formData={formData} />
-                  </Paper>
-                </Grid>
-                <Grid item lg={8} xs={12} sm={7}>
-                  <Paper className={classes.paper} style={{ backgroundColor: "rgb(17, 18, 54)" }}>
-                    <CheckB formData={formData} />
-                  </Paper>
-                </Grid>
-                <Grid item lg={4} xs={12} sm={4}>
-                  <CustBtn formData={formData} />
-                </Grid>
-              </Grid>
+          <div className={styles.fBCBg}>
+            <div className={styles.guest}>
+              <p>Where do you want to stay ?</p>
+              <input type="text" name="location" value={newD.location} onChange={handleChange} />
             </div>
-          </Container>
+            <div>
+              <div className={styles.insideBox}>
+                <div className={styles.custom}>
+                  <p>Check-in</p>
+                  <Stdt formData={formData} />
+                </div>
+                <div className={styles.custom}>
+                  <p>Check-out</p>
+                  <Ledt formData={formData} />
+                </div>
+              </div>
+            </div>
+            <div className={styles.guest}>
+              <p>Guest and rooms</p>
+              <input type="text" name="stays" value={newD.stays} onChange={handleChange} />
+            </div>
+            <div
+              onClick={() => {
+                handleClick();
+              }}
+              className={styles.button}
+            >
+              Search hotels
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default FrontBox;
+export { Form };

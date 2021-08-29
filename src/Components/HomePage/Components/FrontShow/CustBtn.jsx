@@ -41,18 +41,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-
-
 export default function CustBtn({ formData }) {
-   const classes = useStyles();
-   const history = useHistory();
-
+  const classes = useStyles();
+  const history = useHistory();
+  const handleClick = () => {
+    if (!formData.current.location) {
+      alert("Please enter loaction");
+      return;
+    }
+    axios
+      .put("http://localhost:8000/userData/1", formData.current)
+      .then((res) => {
+        history.push("/hotels");
+      })
+      .catch((err) => {
+        alert("something is worng please refresh the page");
+      });
+  };
   return (
     <div>
       <BootstrapButton
         variant="contained"
         onClick={() => {
-          history.push("/hotels");
+          handleClick();
         }}
         color="primary"
         disableRipple
