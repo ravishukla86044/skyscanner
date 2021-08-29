@@ -3,11 +3,11 @@ import { Item } from "./Item";
 import styles from "./ItemPage.module.css";
 import { Map } from "./Map";
 
-function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
+function ItemPage({ toggleDrawer, data, setData, dataa, formData, form }) {
   const [low, setLow] = useState(false);
   const [pBool, setpBool] = useState(false);
   const [sBool, setSBool] = useState(false);
-  console.log(formData);
+  console.log(form, "this is form in itempage");
   const handleBottom = (e, n) => {
     setpBool(false);
     setSBool(false);
@@ -69,7 +69,7 @@ function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
             </div>
             <div>
               <div>
-                <p>{`${data.length} hotels found in ${formData.current.location}`}</p>
+                <p>{`${data.length} hotels found in ${form.location}`}</p>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -171,7 +171,7 @@ function ItemPage({ toggleDrawer, data, setData, dataa, formData }) {
         </div>
         <div className={styles.ItemsDiv}>
           {data.map((item) => (
-            <Item data={item} formData={formData} />
+            <Item data={item} formData={formData} form={form} />
           ))}
         </div>
       </div>

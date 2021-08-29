@@ -16,6 +16,7 @@ import GuestSelect from "../HomePage/Components/FrontShow/GuestSelect";
 import cx from "classnames";
 import CustBtn from "../HomePage/Components/FrontShow/CustBtn";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const BootstrapButton2 = withStyles({
   root: {
@@ -100,19 +101,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Form = ({ formData }) => {
-  const [form, setForm] = useState({
-    location: formData.current.location,
-    sDate: formData.current.sDate,
-    lDate: formData.current.lDate,
-    stays: formData.current.stays,
-  });
-
+const Form = ({ formData, form, setForm }) => {
   const history = useHistory();
+  const [newD, setnewD] = useState({ ...formData.current });
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((pre) => ({ ...pre, [name]: value }));
+    setnewD((pre) => ({ ...pre, [name]: value }));
     formData.current[name] = value;
+  };
+  const handleClick = () => {
+    setForm((pre) => ({ ...formData.current }));
+    axios.put("http://localhost:8000/userData/1", formData.current).then((res) => {
+      console.log("success");
+    });
   };
   const classes = useStyles();
   return (
@@ -148,7 +149,7 @@ const Form = ({ formData }) => {
           <div className={styles.fBCBg}>
             <div className={styles.guest}>
               <p>Where do you want to stay ?</p>
-              <input type="text" name="location" value={form.location} onChange={handleChange} />
+              <input type="text" name="location" value={newD.location} onChange={handleChange} />
             </div>
             <div>
               <div className={styles.insideBox}>
@@ -164,12 +165,12 @@ const Form = ({ formData }) => {
             </div>
             <div className={styles.guest}>
               <p>Guest and rooms</p>
-              <input type="text" name="stays" value={form.stays} onChange={handleChange} />
+              <input type="text" name="stays" value={newD.stays} onChange={handleChange} />
             </div>
             <div
-              //   onClick={() => {
-              //     history.push("/hotels");
-              //   }}
+              onClick={() => {
+                handleClick();
+              }}
               className={styles.button}
             >
               Search hotels

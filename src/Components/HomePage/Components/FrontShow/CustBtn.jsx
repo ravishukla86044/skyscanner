@@ -3,6 +3,7 @@ import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 const BootstrapButton = withStyles({
   root: {
@@ -52,13 +53,26 @@ const useStyles = makeStyles((theme) => ({
 export default function CustBtn({ formData }) {
   const classes = useStyles();
   const history = useHistory();
-
+  const handleClick = () => {
+    if (!formData.current.location) {
+      alert("Please enter loaction");
+      return;
+    }
+    axios
+      .put("http://localhost:8000/userData/1", formData.current)
+      .then((res) => {
+        history.push("/hotels");
+      })
+      .catch((err) => {
+        alert("something is worng please refresh the page");
+      });
+  };
   return (
     <div>
       <BootstrapButton
         variant="contained"
         onClick={() => {
-          history.push("/hotels");
+          handleClick();
         }}
         color="primary"
         disableRipple
