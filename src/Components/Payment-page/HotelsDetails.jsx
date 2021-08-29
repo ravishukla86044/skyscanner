@@ -3,20 +3,21 @@ import axios from "axios";
 import styled from "styled-components";
 const HotelsDetails = ({ formData }) => {
   const [hotelsData, setHotelData] = useState([]);
-
+  
   console.log(formData);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/data").then((res) => {
+    axios.get("  http://localhost:8000/userData").then((res) => {
       setHotelData(res.data);
     });
-  }, []);
 
+  }, []);
+ console.log(hotelsData)
   const HotelsDes = styled.div`
-    width: 515.6px;
+    width: 545.6px;
     height: auto;
     background-color: #f1f2f8;
-    padding: 40px 40px 40px 40px;
+    padding: 30px 30px 30px 30px;
     display: flex;
     flex-direction: column;
     hr {
@@ -80,7 +81,7 @@ const HotelsDetails = ({ formData }) => {
   const Checkin = styled.div`
     display: flex;
     justify-content: space-around;
-    line-height:0;
+    line-height:3;
     div{
   
      
@@ -167,6 +168,8 @@ const HotelsDetails = ({ formData }) => {
     }
   `;
 
+  
+
   return (
     <>
       {hotelsData.map((item) => {
@@ -194,7 +197,7 @@ const HotelsDetails = ({ formData }) => {
               </Topdes>
 
               <Abouthotel>
-                <h2>{item.name}</h2>
+                <h2>{item.target.name}</h2>
                 <img
                   height="20px"
                   src="https://i.ibb.co/4W0mSyv/5-stars.png"
@@ -207,7 +210,7 @@ const HotelsDetails = ({ formData }) => {
                     src="https://i.ibb.co/m4GMRGx/address.png"
                     alt=""
                   />
-                  <p>{item.address}</p>
+                  <p>{item.location}</p>
                 </div>
               </Abouthotel>
 
@@ -216,31 +219,34 @@ const HotelsDetails = ({ formData }) => {
                 <Checkin>
                   <div>
                     <p>Check in</p>
-                    <h4>{item.checkin}</h4>
+                    <h4>{item.lDate}</h4>
                   </div>
 
                   <div>
                     <p>Check out</p>
-                    <h4>{item.checkout}</h4>
+                    <h4>{item.sDate}</h4>
                   </div>
                 </Checkin>
 
                 <Checkin>
                   <div>
                     <p>Guest</p>
-                    <h4>{item.guest}</h4>
+                    <h4>{`${item.stays} days`}</h4>
                   </div>
 
                   <div>
                     <p>stay</p>
-                    <h4>{item.stay}</h4>
+                    <h4>{`${item.target.days} nights`}</h4>
                   </div>
                 </Checkin>
               </Dates>
               <hr />
               <Hotelimages>
                 <Mainhotelimage>
-                  <img width="100%" src={item.url} alt="" />
+                  
+              
+                      <img width="100%" src={item.target.img[0]} alt="" />
+               
                 </Mainhotelimage>
 
                 <ChangeRoom>
@@ -313,30 +319,30 @@ const HotelsDetails = ({ formData }) => {
 
             <Pricedes>
               <div>
-                <p>1 night</p>
-                <p>₹ 2,391.42</p>
+                <p>{`${item.target.days} night`}</p>
+                <p>{`₹${item.target.TotolPrice}`} </p>
               </div>
 
               <div>
                 <p>Taxes and fees</p>
-                <p>₹ 669.59</p>
+                <p>{`₹${Math.floor((Number(item.target.TotolPrice)*18)/100)}`}</p>
               </div>
 
               <Others>
                 <p>Other</p>
-                <p>₹ 669.59</p>
+                <p>{`₹ ${Number(350)}`}</p>
               </Others>
 
               <hr />
 
               <div>
                 <h2>Total</h2>
-                <h2>₹ 3,061.01</h2>
+                <h2>{`₹${Number(item.target.TotolPrice)+Math.floor((Number(item.target.TotolPrice)*18)/100)+Number(350)}`}</h2>
               </div>
 
               <div>
                 <h4></h4>
-                <p>Pay now ₹ 3,061.01</p>
+                <p> {`Pay now ₹${Number(item.target.TotolPrice)+Math.floor((Number(item.target.TotolPrice)*18)/100)+Number(350)}`}</p>
               </div>
             </Pricedes>
 

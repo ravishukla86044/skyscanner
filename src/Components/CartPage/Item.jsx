@@ -107,6 +107,8 @@ function Item({ data, formData, form }) {
   const handleDetails = (data) => {
     formData.current.target = data;
     formData.current.target.TotolPrice = data.lowPrice.price * Math.ceil(form.stays / 2) * diffDays;
+    formData.current.target.days = diffDays;
+
     history.push(`/hotelsdescription/${data.name}`);
     axios.put("http://localhost:8000/userData/1", formData.current);
   };
