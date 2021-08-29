@@ -13,9 +13,9 @@
   "userData": [
     {
       "location": "Bangalore, Karnataka, India",
-      "sDate": "2021-08-29T07:47:18.368Z",
-      "lDate": "Sun Aug 30 2021 13:17:18 GMT+0530 (India Standard Time)",
-      "stays": "2",
+      "sDate": "Sun Aug 29 2021 14:13:43 GMT+0530 (India Standard Time)",
+      "lDate": "Sun Aug 30 2021 14:13:43 GMT+0530 (India Standard Time)",
+      "stays": "3",
       "target": {
         "id": 1,
         "star": 5,
@@ -48,7 +48,8 @@
             "price": "2730"
           }
         ],
-        "TotolPrice": 2391
+        "TotolPrice": 4782,
+        "days": 1
       },
       "id": 1
     }
