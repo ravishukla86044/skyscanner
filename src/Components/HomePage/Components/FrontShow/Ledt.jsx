@@ -49,6 +49,7 @@ export default function Ledt({ formData }) {
       ...formData.current,
       lDate: date,
     };
+    console.log("lDate",formData)
   };
 
   return (
