@@ -5,8 +5,35 @@ import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
 
 export default function Stdt({ formData }) {
-  // The first commit of Material-UI
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
+   var res = "";
+  const neDate = new Date();
+  let Monnt_2day = Number(neDate.getMonth());
+
+  var monVals = 30;
+
+  if (
+    Monnt_2day === 0 ||
+    Monnt_2day === 2 ||
+    Monnt_2day === 4 ||
+    Monnt_2day === 6 ||
+    Monnt_2day === 7 ||
+    Monnt_2day === 9 ||
+    Monnt_2day === 11
+  ) {
+    monVals = 31;
+  } else if (Monnt_2day === 1) {
+    monVals = 28;
+  } else {
+    monVals = 30;
+  }
+  res += neDate;
+  res = res.split(" ");
+  if (res[2] > monVals) {
+    res[2] = res[2] - monVals;
+  }
+  res[2] = Number(res[2]);
+  res = res.join(" ");
+  const [selectedDate, setSelectedDate] = React.useState(res);
 
   useEffect(() => {
     formData.current = {
@@ -20,6 +47,8 @@ export default function Stdt({ formData }) {
       ...formData.current,
       sDate: date,
     };
+    console.log("sDate", formData)
+
   };
 
   return (
