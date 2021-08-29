@@ -12,6 +12,7 @@ import Heading from "../HomePage/Components/Header/Heading";
 import Footer from "../HomePage/Components/Footer/Footer";
 
 import { Form } from "./Form";
+import axios from "axios";
 
 const useStyles = makeStyles({
   list: {
@@ -201,7 +202,7 @@ function CartPage({ formData }) {
   const arrr = Array(31).fill(false);
 
   const [data, setData] = useState(dataa);
-  const [form, setForm] = useState(formData);
+  const [form, setForm] = useState({});
   const [arr, setArr] = useState(arrr);
   const classes = useStyles();
   const [state, setState] = React.useState({
@@ -209,6 +210,15 @@ function CartPage({ formData }) {
   });
   useState(() => {
     setData((pre) => [...pre]);
+    axios
+      .get("http://localhost:8000/userData/1")
+      .then((res) => {
+        console.log(res, "this is response");
+        setForm(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     console.log("useusss");
   }, [formData]);
 
@@ -334,7 +344,7 @@ function CartPage({ formData }) {
   return (
     <>
       <Heading />
-      <Form formData={formData} />
+      <Form form={form} setForm={setForm} formData={formData} />
       <div className={styles.sideBar}>
         <SwipeableDrawer
           anchor="left"
@@ -346,6 +356,7 @@ function CartPage({ formData }) {
         </SwipeableDrawer>
       </div>
       <ItemPage
+        form={form}
         formData={formData}
         toggleDrawer={toggleDrawer}
         data={data}

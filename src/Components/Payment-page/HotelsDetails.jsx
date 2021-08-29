@@ -168,7 +168,7 @@ const HotelsDetails = ({ formData }) => {
   `;
 
   return (
-    <div>
+    <>
       {hotelsData.map((item) => {
         return (
           <HotelsDes key={item.id}>
@@ -351,8 +351,8 @@ const HotelsDetails = ({ formData }) => {
               </div>
 
               <p>
-                If you cancel or don't attend your hotel booking, you'll not be
-                refunded any of your original payment.
+                If you cancel or don't attend your hotel booking, you'll not be refunded any of your
+                original payment.
               </p>
 
               <img
@@ -363,15 +363,14 @@ const HotelsDetails = ({ formData }) => {
               />
 
               <p>
-                You can cancel this booking for free at any time before it is
-                confirmed. If your booking can’t be confirmed, you’ll receive a
-                full refund.
+                You can cancel this booking for free at any time before it is confirmed. If your
+                booking can’t be confirmed, you’ll receive a full refund.
               </p>
             </Refund>
           </HotelsDes>
         );
       })}
-    </div>
+    </>
   );
 };
 
