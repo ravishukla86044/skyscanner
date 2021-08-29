@@ -3,6 +3,7 @@ import axios from "axios";
 import styled from "styled-components";
 const HotelsDetails = ({ formData }) => {
   const [hotelsData, setHotelData] = useState([]);
+  const x = 10;
   
   console.log(formData);
 
