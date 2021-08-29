@@ -5,26 +5,23 @@ import styled from "styled-components";
 
 import axios from "axios";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiTextField-root": {
       margin: theme.spacing(1),
       width: 400,
     },
-   
+
     details: {
       color: "#4A96FF",
     },
   },
   submitbtn: {
-    backgroundColor:"#4A96FF",
+    backgroundColor: "#4A96FF",
     color: "white",
     width: "200px",
     textAlign: "center",
   },
-
-
 }));
 
 const MainGuest = () => {
@@ -38,12 +35,12 @@ const MainGuest = () => {
   const [guesttwofirstName, setguesttwoFirstName] = useState("");
   const [guesttwolastName, setguesttwoLastName] = useState("");
   // const [colors,setColor] =useState("#4A96FF")
-  const [rightsign,setRightsign] = useState("https://i.ibb.co/rdFFcWG/icons8-checked-40.png");
-  const[addDetails,setaddDetails] = useState(false)
+  const [rightsign, setRightsign] = useState("https://i.ibb.co/rdFFcWG/icons8-checked-40.png");
+  const [addDetails, setaddDetails] = useState(false);
 
-  useEffect(()=>{
-     setGuest(!guest)
-  },[])
+  useEffect(() => {
+    setGuest(!guest);
+  }, []);
   const payload = {
     name,
     email,
@@ -57,21 +54,20 @@ const MainGuest = () => {
     setGuest(!guest);
   };
 
-  const handleSubmit = (e)=>{
-      e.preventDefault();
-      axios.post("http://localhost:8000/userData",payload);
-      console.log(payload)
-     
-      setName("")
-      setEmail("")
-      setPhone("")
-      setguestoneFirstName("")
-      setguestoneLastName("")
-      setguesttwoFirstName("")
-      setguesttwoLastName("")
-      setaddDetails(!addDetails)
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // axios.post("http://localhost:8000/userData",payload);
+    console.log(payload);
 
-  }
+    setName("");
+    setEmail("");
+    setPhone("");
+    setguestoneFirstName("");
+    setguestoneLastName("");
+    setguesttwoFirstName("");
+    setguesttwoLastName("");
+    setaddDetails(!addDetails);
+  };
 
   const Guest = styled.div`
     display: flex;
@@ -80,7 +76,7 @@ const MainGuest = () => {
   `;
   const Underguest = styled.div`
     line-height: 20px;
-    p{
+    p {
       color: #68697f;
     }
   `;
@@ -106,25 +102,21 @@ const MainGuest = () => {
     line-height: 1.25rem;
   `;
   const Buttonadd = styled.button`
-    
-    height:37px;
+    height: 37px;
     width: 30%;
-    background-color:#4A96FF;
-    color:white;
-    border:none;
+    background-color: #4a96ff;
+    color: white;
+    border: none;
     font-size: medium;
-    border-radius:2px;
+    border-radius: 2px;
     margin-left: 10px;
-
-  
-  `
+  `;
   const Btndiv = styled.div`
-    margin-top:20px;
-    marginLeft:5px
-  `
+    margin-top: 20px;
+    marginleft: 5px;
+  `;
   return (
     <>
-    
       <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Guest>
           <Underguest>
@@ -144,7 +136,7 @@ const MainGuest = () => {
           </Guestplush>
         </Guest>
 
-        <div >
+        <div>
           <div>
             <Namepara>First Name</Namepara>
             <TextField
@@ -160,7 +152,6 @@ const MainGuest = () => {
           <div>
             <Namepara>Last Name</Namepara>
             <TextField
-            
               label="Last Name"
               id="outlined-size-normal"
               placeholder="Enter last name using Roman Characters"
@@ -257,8 +248,8 @@ const MainGuest = () => {
       </form>
 
       <Btndiv>
-        <Buttonadd  onClick={handleSubmit}>
-         {addDetails?<img height="35px" width="35px" src={rightsign}/>:"Add Details"}
+        <Buttonadd onClick={handleSubmit}>
+          {addDetails ? <img height="35px" width="35px" src={rightsign} /> : "Add Details"}
         </Buttonadd>
       </Btndiv>
     </>
