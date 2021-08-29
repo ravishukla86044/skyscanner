@@ -2,6 +2,7 @@ import styles from "./Item.module.css";
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 function Star({ n }) {
   let arr = [];
@@ -82,14 +83,14 @@ function PriceArr({ items }) {
   );
 }
 
-function Item({ data, formData }) {
+function Item({ data, formData, form }) {
   const [width, setWidth] = useState(window.innerWidth);
   const history = useHistory();
   // const sarr = formData.current.sDate.split(" ");
   // sarr.splice(2);
   // console.log(sarr);
-  const d1 = new Date(formData.current.sDate);
-  const d2 = new Date(formData.current.lDate);
+  const d1 = new Date(form.sDate);
+  const d2 = new Date(form.lDate);
   const diffTime = Math.abs(d2 - d1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   console.log(diffDays, typeof diffDays, formData);
@@ -105,9 +106,9 @@ function Item({ data, formData }) {
 
   const handleDetails = (data) => {
     formData.current.target = data;
-    formData.current.target.TotolPrice =
-      data.lowPrice.price * Math.ceil(formData.current.stays / 2) * diffDays;
+    formData.current.target.TotolPrice = data.lowPrice.price * Math.ceil(form.stays / 2) * diffDays;
     history.push(`/hotelsdescription/${data.name}`);
+    axios.put("http://localhost:8000/userData/1", formData.current);
   };
 
   return width > 600 ? (
@@ -179,7 +180,7 @@ function Item({ data, formData }) {
                 <p>{`₹ ${data.lowPrice.price}`}</p>
                 <p>a night</p>
                 <p>
-                  {`₹ ${data.lowPrice.price * Math.ceil(formData.current.stays / 2) * diffDays}`}{" "}
+                  {`₹ ${data.lowPrice.price * Math.ceil(form.stays / 2) * diffDays}`}{" "}
                   <span>total stay</span>
                 </p>
                 <span>Taxes and fees not included</span>

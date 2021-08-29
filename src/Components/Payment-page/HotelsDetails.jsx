@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-const HotelsDetails = () => {
+const HotelsDetails = ({ formData }) => {
   const [hotelsData, setHotelData] = useState([]);
 
   useEffect(() => {
@@ -18,8 +18,8 @@ const HotelsDetails = () => {
     hr {
       width: 100%;
       height: 0.1px;
-      opacity:0.4;
-      background-color:#a9a9b6;
+      opacity: 0.4;
+      background-color: #a9a9b6;
     }
   `;
   const MainDes = styled.div`
@@ -117,8 +117,8 @@ const HotelsDetails = () => {
     hr {
       width: 100%;
       height: 0.1px;
-      opacity:0.4;
-      background-color:#a9a9b6;
+      opacity: 0.4;
+      background-color: #a9a9b6;
     }
   `;
   const Others = styled.div`
@@ -149,7 +149,6 @@ const HotelsDetails = () => {
 
   return (
     <>
-   
       {hotelsData.map((item) => {
         return (
           <HotelsDes key={item.id}>
@@ -289,16 +288,15 @@ const HotelsDetails = () => {
               </div>
 
               <p>
-                If you cancel or don't attend your hotel booking, you'll not be
-                refunded any of your original payment.
+                If you cancel or don't attend your hotel booking, you'll not be refunded any of your
+                original payment.
               </p>
 
               <img height="25px" src="final confirmation time.png" />
 
               <p>
-                You can cancel this booking for free at any time before it is
-                confirmed. If your booking can’t be confirmed, you’ll receive a
-                full refund.
+                You can cancel this booking for free at any time before it is confirmed. If your
+                booking can’t be confirmed, you’ll receive a full refund.
               </p>
             </Refund>
           </HotelsDes>
