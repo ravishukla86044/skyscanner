@@ -15,7 +15,7 @@ import Ledt from "./Ledt";
 import GuestSelect from "./GuestSelect";
 import CheckB from "./CheckB";
 import CustBtn from "./CustBtn";
-
+import clsx from "clsx";
 const BootstrapButton2 = withStyles({
   root: {
     boxShadow: "none",
@@ -102,7 +102,7 @@ const FrontBox = ({ formData }) => {
   const classes = useStyles();
   return (
     <div>
-      <Container maxWidth="lg" className={styles.headBtn}>
+      <div className={styles.headBtn}>
         <BootstrapButton
           variant="contained"
           color="primary"
@@ -127,11 +127,11 @@ const FrontBox = ({ formData }) => {
         >
           <DriveEtaIcon /> Car Rental
         </BootstrapButton>
-      </Container>
+      </div>
       <div className={styles.frontBoxDiv}>
         <div className={styles.frontBoxDivCont}>
           <Container maxWidth="lg" className={styles.headContFrnt}>
-            <h1>Find your place to stay</h1>
+            <h1 className={styles.headingFrntB}>Find your place to stay</h1>
             <div className={styles.fBCBg}>
               <Grid container spacing={1}>
                 <Grid item lg={4} xs={12}>
@@ -163,7 +163,7 @@ const FrontBox = ({ formData }) => {
                   </Paper>
                 </Grid>
                 <Grid item lg={8} xs={12} sm={7}>
-                  <Paper className={classes.paper} style={{ backgroundColor: "rgb(17, 18, 54)" }}>
+                  <Paper className={clsx(classes.paper, styles.customCheckBoxDiv)}>
                     <CheckB formData={formData} />
                   </Paper>
                 </Grid>

@@ -6,6 +6,9 @@
   position: relative;
   z-index: -1;
 }
+.headingFrntB {
+  display: flex;
+}
 .frontBoxDiv {
   margin-top: -10px;
   background-image: url("https://js.skyscnr.com/sttc/hotels-website/hotels-website/static/media/fb52ac4eda2ad98d31de60d87b1146a2.4c4c15f5.jpg");
@@ -33,6 +36,9 @@
   line-height: 4.875rem;
   color: aliceblue;
 }
+.customCheckBoxDiv {
+  background-color: rgb(17, 18, 54);
+}
 .fBCBg {
   background-color: rgb(17, 18, 54);
   border-radius: 15px;
@@ -58,6 +64,28 @@
 }
 .customDates > div > div > div::before {
   border: none !important;
+}
+@media only screen and (max-width: 600px) {
+  .headingFrntB {
+    display: none;
+  }
+  .frontBoxDiv {
+    background-color: rgb(4, 39, 89) !important;
+    background-image: none !important;
+  }
+  .headBtn {
+    justify-content: center;
+  }
+  .fBCBg {
+    background-color: rgb(4, 39, 89) !important;
+  }
+  .frontBoxDivCont {
+    background-color: rgb(4, 39, 89) !important;
+  }
+  .heDivLab,
+  .customCheckBoxDiv {
+    background-color: rgb(4, 39, 89) !important;
+  }
 }
 @media only screen and (min-width: 992px) {
   .fBCBg > div > div {

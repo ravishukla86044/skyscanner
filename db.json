@@ -13,43 +13,9 @@
   "userData": [
     {
       "location": "Bangalore, Karnataka, India",
-      "sDate": "2021-08-29T07:47:18.368Z",
-      "lDate": "Sun Aug 30 2021 13:17:18 GMT+0530 (India Standard Time)",
-      "stays": "2",
-      "target": {
-        "id": 1,
-        "star": 5,
-        "img": [
-          "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x960.jpg",
-          "https://d2xf5gjipzd8cd.cloudfront.net/available/443227701/443227701_960x960.jpg",
-          "https://d2xf5gjipzd8cd.cloudfront.net/available/351852349/351852349_960x960.jpg",
-          "https://d2xf5gjipzd8cd.cloudfront.net/available/443227700/443227700_960x960.jpg",
-          "https://d2xf5gjipzd8cd.cloudfront.net/available/553547360/553547360_960x960.jpg",
-          "https://d2xf5gjipzd8cd.cloudfront.net/available/534885123/534885123_960x960.jpg"
-        ],
-        "name": "Radisson Blu Bengaluru Outer Ring Road",
-        "addrs": "Sy No 90/4 Munnekollalu Village,Marathahalli-Outer Ring Road, Bengaluru, 560037, India",
-        "rating": "4.5",
-        "reviews": "1615",
-        "cleanliness": "4.5",
-        "distancefromCity": "11.6",
-        "lowPrice": {
-          "img": "https://www.skyscanner.co.in/g/hotels-website/api/images/v1/trim?url=%2F%2Fwww.skyscanner.co.in%2Fimages%2Fwebsites%2F220x80%2Fd_ct.png&user_context={%22device%22%3A{%22osName%22%3A%22Windows%2010%22%2C%22osVersion%22%3A%22NT%2010.0%22%2C%22model%22%3A%22Chrome%20-%20Windows%22%2C%22vendor%22%3A%22Google%22%2C%22browserVersion%22%3A%2292.0.4515.159%22%2C%22browserName%22%3A%22Chrome%22%2C%22primaryHardwareType%22%3A%22Desktop%22%2C%22marketingName%22%3A%22unknown%22%2C%22isMobilePhone%22%3Afalse%2C%22isTablet%22%3Afalse%2C%22isBrowser%22%3Atrue%2C%22isRobot%22%3Afalse}%2C%22ipAddress%22%3A%22112.79.195.27%22%2C%22userPreferences%22%3A{%22isNewUser%22%3Afalse%2C%22isLoggedIn%22%3Afalse%2C%22utid%22%3A%2224f94175-4be2-40b0-b4b3-f370c07dd962%22%2C%22userPreferencesId%22%3A%2224f941754be240b0b4b3f370c07dd962%22}%2C%22bellboySortingVersion%22%3A%22%22%2C%22hotelCouponFlightDbookCampaignid%22%3Anull%2C%22flightsCugEnabled%22%3Atrue%2C%22hotelCouponEnabled%22%3Atrue%2C%22cugOverride%22%3A[]%2C%22searchCycleId%22%3Anull%2C%22searchResultCacheEnable%22%3Afalse%2C%22searchOnlyCurrentCity%22%3Atrue%2C%22locale%22%3A%22en-GB%22%2C%22showHotelPolicy%22%3Afalse%2C%22isBananaReferral%22%3Afalse%2C%22impressionId%22%3A%22dd0103d5-cc4f-4f90-9cfb-dec49060230c%22%2C%22experiments%22%3A{%22BD_byPrice_desktop_DV%22%3Anull%2C%22BD_Performance_Improve_DV%22%3Anull%2C%22BD_Mobile_AgodaDbook%22%3Anull%2C%22BD_MWeb_Ctrip_meta%22%3Anull%2C%22BD_Mobile_RR_Dbook_Partners%22%3A%22b%22}%2C%22utmSource%22%3Anull%2C%22bellboyTVersion%22%3A%22%22%2C%22enableCouponMsgEnhancement%22%3Atrue%2C%22verifyAnonymousJwtEnable%22%3Afalse%2C%22pageType%22%3A%22hotels-results%22%2C%22withFastSearch%22%3Afalse",
-          "siteName": "Trip.com",
-          "price": "2391"
-        },
-        "price": [
-          {
-            "siteName": "Agoda",
-            "price": "2578"
-          },
-          {
-            "siteName": "Booking.com",
-            "price": "2730"
-          }
-        ],
-        "TotolPrice": 2391
-      },
+      "sDate": "Sun Aug 29 2021 13:57:34 GMT+0530 (India Standard Time)",
+      "lDate": "Sun Aug 30 2021 13:57:34 GMT+0530 (India Standard Time)",
+      "stays": 1,
       "id": 1
     }
   ]
