@@ -157,6 +157,7 @@ body {
   margin: auto;
   display: flex;
   justify-content: space-around;
+  text-align: center;
 }
 .tamenities1 > div {
   width: 14%;

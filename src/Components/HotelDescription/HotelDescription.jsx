@@ -35,6 +35,7 @@ import { dataa } from "../CartPage/utils/dataa";
 import { useParams } from "react-router-dom";
 import styles from "../../Components/CartPage/Item.module.css";
 import Footer from "../../Components/HomePage/Components/Footer/Footer";
+import Heading from "../../Components/HomePage/Components/Header/Heading";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
   console.log(formData, name);
@@ -115,7 +116,8 @@ export const HotelDescription = ({ formData }) => {
     
    // console.log(img);
   return (
-    <div>
+      <div>
+          <Heading/>
       <div className="toutterContainer">
         {img.map((item, i) => {
           return (
@@ -148,7 +150,7 @@ export const HotelDescription = ({ formData }) => {
 
           <div className="tbelowAdress">
               <div>
-                  <Button variant="contained" color="primary" size="large" style={{backgroundColor:"rgb(65,216,161)",borderRadius:"50px"}}>{rating}</Button>
+                  <div  style={{backgroundColor:"rgb(0,136,126)",borderRadius:"30px",width:"90px",height:"60px",textAlign:"center",outline:"none",paddingTop:"2px",boxSizing: "border-box"}}><p style={{fontSize:"22px",fontWeight:"bold",color:"white"}} >{rating}</p></div>
               </div>
               <div> 
                   <div style={{marginLeft:"35px",marginTop:"2px",marginRight:"20px",width:"200px"}}>
@@ -157,8 +159,16 @@ export const HotelDescription = ({ formData }) => {
                   </div>  
               </div>
 
-              <div style={{width:"150px",height:"50px",borderRadius:"10px",backgroundColor:"lightGray",textAlign:"center",fontFamily:"serif"}}>
-                      <p>Cleanliness {clean}/5</p>
+              <div style={{ width: "150px", height: "25px", borderRadius: "50px", backgroundColor: "lightGray", textAlign: "center", fontFamily: "serif",display:"flex",justifyContent: "space-around",padding:"5px",boxSizing: "border-box"}}>
+                  <div>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="#5a489b" viewBox="0 0 24 24" width="1.25rem" height="1.125rem" class="ConfidentMessage_ConfidentMessage__itemClean--icon__3264E" ><path d="M6.176 4.83a.69.69 0 0 1 .92-.251l6.861 3.69a1.502 1.502 0 0 1 .712.846l2.624 7.864a1.5 1.5 0 0 0 2.846-.948l-2.624-7.862a4.497 4.497 0 0 0-2.135-2.537l-6.862-3.69a3.687 3.687 0 0 0-3.652 6.403q.067.04.135.078l6.247 3.404a1.499 1.499 0 1 0 1.437-2.631L6.437 5.792a.69.69 0 0 1-.275-.936l.013-.024zm11.04 14.672a1.5 1.5 0 1 0-.134 2.997q.067.003.134 0h4.5a1.5 1.5 0 0 0 .135-2.997q-.067-.003-.135 0zm-10.5 0a3 3 0 1 1-3-2.997 2.999 2.999 0 0 1 3 2.997z"></path><path d="M2.898 12.009c-1.205 0-2.182 1.449-2.182 2.68v.46a.547.547 0 0 0 .816.425 4.498 4.498 0 0 1 6.121 6.108.547.547 0 0 0 .424.817h3.957a2.207 2.207 0 0 0 2.182-2.231v-1.116c0-3.696-2.93-7.142-6.545-7.142H2.898z"></path></svg>
+                 
+                  </div>
+                  <div>
+             
+                  <p style={{ fontSize: "14px", fontFamily: "serif", margin: "0px" }}>Cleanliness {clean}/5</p>  
+                 </div>
+                
                   </div>
           </div>
           <div className="outterTpay" style={{width:"80%",margin:"auto",marginBottom:"150px" }}>
@@ -173,12 +183,12 @@ export const HotelDescription = ({ formData }) => {
                  <h5  style={{marginLeft:"50px",}}>Anmeties</h5>
              </div>
 
-             <div className="tprice" style={{display:"flex",marginLeft:"45%"}}>
+             <div className="tprice" style={{display:"flex",marginLeft:"42%"}}>
                  <div>
-                     <h1>{price}</h1>
+                     <h1>₹ {price}</h1>
                  </div>
-                 <div style={{marginTop:"16px",marginLeft:"5px"}}>
-                 <Button color="primary" variant="contained" size="small"><ArrowDownwardIcon/></Button>
+                 <div style={{marginTop:"16px",marginLeft:"5px",}}>
+                          <Button color="primary" variant="contained" size="small" className="MainPrice_MainPrice__button__MY5pC BpkButtonBase_bpk-button__3aBJ2 " style={{ background: "rgb(0,136,126)", width: "24px", height: "35px", }}><ArrowDownwardIcon style={{padding:"10px"}}/></Button>
                  </div>
              </div>
               </div>
@@ -960,4 +970,6 @@ export const HotelDescription = ({ formData }) => {
     "https://d2xf5gjipzd8cd.cloudfront.net/available/351852349/351852349_960x576.jpg",
     "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
     "https://d2xf5gjipzd8cd.cloudfront.net/available/443227700/443227700_960x576.jpg",
-  ];*/
+  ];
+  
+  <div class="PriceChangeReminder_PriceChangeReminder__PEAeK"><h2 class="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxl__1Sso6 BpkText_bpk-text--bold__3ulW0 MainPrice_MainPrice__price__1E4SF">₹ 2,730</h2></div>*/
