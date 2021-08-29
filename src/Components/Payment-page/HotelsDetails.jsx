@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-const HotelsDetails = () => {
+const HotelsDetails = ({ formData }) => {
   const [hotelsData, setHotelData] = useState([]);
+
+  console.log(formData);
 
   useEffect(() => {
     axios.get("http://localhost:8000/data").then((res) => {
@@ -15,13 +17,13 @@ const HotelsDetails = () => {
     height: auto;
     background-color: #f1f2f8;
     padding: 40px 40px 40px 40px;
-   display: flex;
-   flex-direction: column;
+    display: flex;
+    flex-direction: column;
     hr {
       width: 100%;
       height: 0.1px;
-      opacity:0.4;
-      background-color:#a9a9b6;
+      opacity: 0.4;
+      background-color: #a9a9b6;
     }
   `;
   const MainDes = styled.div`
@@ -44,7 +46,7 @@ const HotelsDetails = () => {
     display: flex;
     gap: 5px;
     p {
-      margin-top: -3px;
+      margin-top: 0px;
     }
   `;
   const Abouthotel = styled.div`
@@ -62,14 +64,28 @@ const HotelsDetails = () => {
 
   const Dates = styled.div`
     margin: 20px 0px 20px 0px;
+    height: 160px;
     div {
       height: 80px;
-      width: 340px;
+      width: 420px;
+    }
+
+    p{
+      color: #68697f;
+      font-size: 1rem;
+     line-height: 0.25rem;
+     font-weight: 400;
     }
   `;
   const Checkin = styled.div`
     display: flex;
-    gap: 30%;
+    justify-content: space-around;
+    line-height:0;
+    div{
+  
+     
+      margin: 10px;
+    }
   `;
 
   const Hotelimages = styled.div`
@@ -86,8 +102,6 @@ const HotelsDetails = () => {
       width: 180px;
       display: flex;
       gap: 10px;
-     
-      
 
       p {
         margin-top: -2px;
@@ -123,8 +137,8 @@ const HotelsDetails = () => {
     hr {
       width: 100%;
       height: 0.1px;
-      opacity:0.4;
-      background-color:#a9a9b6;
+      opacity: 0.4;
+      background-color: #a9a9b6;
     }
   `;
   const Others = styled.div`
@@ -137,7 +151,7 @@ const HotelsDetails = () => {
 
   const Refund = styled.div`
     width: 450px;
-    height: 220px;
+    height: 250px;
     background-color: #ffffff;
     margin: auto;
     margin-top: 30px;
@@ -149,20 +163,23 @@ const HotelsDetails = () => {
     }
 
     h2 {
-      margin-top: 0px;
+      margin-top: 6px;
     }
   `;
 
   return (
     <div>
-   
       {hotelsData.map((item) => {
         return (
           <HotelsDes key={item.id}>
             <MainDes>
               <Topdes>
                 <Undertop>
-                  <img height="20px" src="icons8-building-30.png" />
+                  <img
+                    height="20px"
+                    src="https://i.ibb.co/jLCcLrh/icons8-building-30.png"
+                    alt=""
+                  />
                   <p>Book on Skyscanner</p>
                 </Undertop>
 
@@ -170,17 +187,26 @@ const HotelsDetails = () => {
                   <p>You are booking with</p>
                   <img
                     height="20px"
-                    src="https://content.skyscnr.com/9544b6207740975ed6509f113a1ac437/trip-logo-default.svg"
+                    src="https://content.skyscnr.com/9544b6207740975ed6509f113a1ac437/trip-logo-default.svg "
+                    alt=""
                   />
                 </Undertop>
               </Topdes>
 
               <Abouthotel>
                 <h2>{item.name}</h2>
-                <img height="20px" src="5 stars.png" />
+                <img
+                  height="20px"
+                  src="https://i.ibb.co/4W0mSyv/5-stars.png"
+                  alt=""
+                />
 
                 <div>
-                  <img height="20px" src="address.png" />
+                  <img
+                    height="20px"
+                    src="https://i.ibb.co/m4GMRGx/address.png"
+                    alt=""
+                  />
                   <p>{item.address}</p>
                 </div>
               </Abouthotel>
@@ -214,7 +240,7 @@ const HotelsDetails = () => {
               <hr />
               <Hotelimages>
                 <Mainhotelimage>
-                  <img width="100%" src={item.url} />
+                  <img width="100%" src={item.url} alt="" />
                 </Mainhotelimage>
 
                 <ChangeRoom>
@@ -224,36 +250,62 @@ const HotelsDetails = () => {
 
                 <RoomsDes>
                   <div>
-                    <img height="20px" src="squarefeet.png" />
+                    <img
+                      height="20px"
+                      src="https://i.ibb.co/VvcGyvw/squarefeet.png"
+                      alt=""
+                    />
                     <p>32 m²</p>
                   </div>
 
                   <div>
-                    <img height="20px" width="22" src="bed.png" />
+                    <img
+                      height="20px"
+                      width="22"
+                      src="https://i.ibb.co/GvLgwHv/bed.png"
+                      alt=""
+                    />
                     <p>1 x king bed, 2 x Semi-double bed</p>
                   </div>
 
                   <div>
-                    <img height="20px" src="not avial.png" />
+                    <img
+                      height="20px"
+                      src="https://i.ibb.co/1fDk4hb/not-avial.png"
+                      alt=""
+                    />
                     <p>Meals not included</p>
                   </div>
 
                   <div>
-                    <img height="20px" src="nope.png" />
+                    <img
+                      height="20px"
+                      src="https://i.ibb.co/FHskJN0/non-refundablwe.png"
+                      alt=""
+                    />
                     <p>Non-refundable</p>
                   </div>
                   <div>
-                    <img height="20px"  width="25" src="doller.png" />
+                    <img
+                      height="20px"
+                      width="25"
+                      src="https://i.ibb.co/PTkMpk3/doller.png"
+                      alt=""
+                    />
                     <p>Pay now</p>
                   </div>
 
                   <div>
-                    <img height="20px"  src="guest.png" />
+                    <img
+                      height="20px"
+                      src="https://i.ibb.co/c69G0xy/guest.png"
+                      alt=""
+                    />
                     <p>Up to 2 guests</p>
                   </div>
 
                   <div>
-                    <img src="hoyrs.png" />
+                    <img src="https://i.ibb.co/kJwFgTg/hoyrs.png" alt="" />
                   </div>
                 </RoomsDes>
               </Hotelimages>
@@ -290,7 +342,11 @@ const HotelsDetails = () => {
 
             <Refund>
               <div>
-                <img height="30px" src="non refundablwe.png" />
+                <img
+                  height="30px"
+                  src="https://i.ibb.co/sC1XS4G/nope.png"
+                  alt=""
+                />
                 <h2>Non-refundable</h2>
               </div>
 
@@ -299,7 +355,12 @@ const HotelsDetails = () => {
                 refunded any of your original payment.
               </p>
 
-              <img height="25px" src="final confirmation time.png" />
+              <img
+                height="60px"
+                width="270px"
+                src="https://i.ibb.co/kJwFgTg/hoyrs.png"
+                alt=""
+              />
 
               <p>
                 You can cancel this booking for free at any time before it is

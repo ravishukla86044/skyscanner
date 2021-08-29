@@ -38,7 +38,7 @@ const MainGuest = () => {
   const [guesttwofirstName, setguesttwoFirstName] = useState("");
   const [guesttwolastName, setguesttwoLastName] = useState("");
   // const [colors,setColor] =useState("#4A96FF")
-  const [rightsign,setRightsign] = useState("icons8-checked-40.png");
+  const [rightsign,setRightsign] = useState("https://i.ibb.co/rdFFcWG/icons8-checked-40.png");
   const[addDetails,setaddDetails] = useState(false)
 
   useEffect(()=>{
@@ -124,6 +124,7 @@ const MainGuest = () => {
   `
   return (
     <>
+    
       <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Guest>
           <Underguest>
@@ -131,7 +132,7 @@ const MainGuest = () => {
               <h2>Main guest</h2>
               <div>
                 {" "}
-                <img height="20px" src="main guest.png" />
+                <img height="20px" src="https://i.ibb.co/fqgzJnn/main-guest.png" />
               </div>
             </Guestpara>
 
@@ -139,7 +140,7 @@ const MainGuest = () => {
           </Underguest>
 
           <Guestplush onClick={handlePlush}>
-            <img src="plush sign.png" />
+            <img src="https://i.ibb.co/XbGn17r/plush-sign.png" />
           </Guestplush>
         </Guest>
 
@@ -180,13 +181,13 @@ const MainGuest = () => {
                       <h2>Guest2</h2>
                       <div>
                         {" "}
-                        <img height="20px" src="main guest.png" />
+                        <img height="20px" src="https://i.ibb.co/fqgzJnn/main-guest.png" />
                       </div>
                     </Guestpara>
                   </Underguest>
 
                   <Guestplush onClick={handlePlush}>
-                    <img src="minus sign.png" />
+                    <img src="https://i.ibb.co/Ksz8qBk/minus-sign.png" />
                   </Guestplush>
                 </Guest>
                 <Namepara>First Name</Namepara>
