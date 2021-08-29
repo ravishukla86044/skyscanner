@@ -1,5 +1,7 @@
 import styles from "./Item.module.css";
 import StarRoundedIcon from "@material-ui/icons/StarRounded";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 function Star({ n }) {
   let arr = [];
@@ -80,11 +82,38 @@ function PriceArr({ items }) {
   );
 }
 
-function Item({ data, stay }) {
-  return (
+function Item({ data, formData }) {
+  const [width, setWidth] = useState(window.innerWidth);
+  const history = useHistory();
+  // const sarr = formData.current.sDate.split(" ");
+  // sarr.splice(2);
+  // console.log(sarr);
+  const d1 = new Date(formData.current.sDate);
+  const d2 = new Date(formData.current.lDate);
+  const diffTime = Math.abs(d2 - d1);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  console.log(diffDays, typeof diffDays, formData);
+  window.addEventListener("resize", handleResize);
+  function handleResize() {
+    setWidth(window.innerWidth);
+    // console.log("no");
+  }
+
+  useEffect(() => {
+    // console.log("yes");
+  }, [width]);
+
+  const handleDetails = (data) => {
+    formData.current.target = data;
+    formData.current.target.TotolPrice =
+      data.lowPrice.price * Math.ceil(formData.current.stays / 2) * diffDays;
+    history.push(`/hotelsdescription/${data.name}`);
+  };
+
+  return width > 600 ? (
     <div className={styles.Con}>
       <div className={styles.img}>
-        <img src={data.img} alt="" />
+        <img src={data.img[0]} alt="" />
       </div>
       <div>
         <div className={styles.left}>
@@ -150,14 +179,74 @@ function Item({ data, stay }) {
                 <p>{`₹ ${data.lowPrice.price}`}</p>
                 <p>a night</p>
                 <p>
-                  {`₹ ${data.lowPrice.price * stay}`} <span>total stay</span>
+                  {`₹ ${data.lowPrice.price * Math.ceil(formData.current.stays / 2) * diffDays}`}{" "}
+                  <span>total stay</span>
                 </p>
                 <span>Taxes and fees not included</span>
               </div>
             </div>
             <div className={styles.rLower}>
-              <button>View Details</button>
+              <button
+                onClick={() => {
+                  handleDetails(data);
+                }}
+              >
+                View Details
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div
+      onClick={() => {
+        handleDetails(data);
+      }}
+      className={styles.smallCon}
+    >
+      <div>
+        <img src={data.img} alt="" />
+        <div>
+          <p>{data.name} </p>
+          <Star n={data.star} />
+        </div>
+      </div>
+      <div>
+        <div>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <div className={styles.rating}>{data.rating}</div>
+            <div>
+              <div className={styles.dotImg}>
+                <div>
+                  <img
+                    src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/4.5-64600-4.svg"
+                    alt=""
+                  />
+                </div>
+                <Dots n={data.rating} />
+              </div>
+              <div className={styles.rev}>{`${data.reviews} reviews`}</div>
+            </div>
+          </div>
+          <p>{`Cleanliness ${data.cleanliness}/5`}</p>
+        </div>
+        <div className={styles.dis}>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="1.125rem"
+              height="1.125rem"
+              fill="#68697f"
+            >
+              <path d="M13.5 16.963a.806.806 0 0 1 .595-.76 7.5 7.5 0 1 0-4.19 0 .806.806 0 0 1 .595.76V21a1.5 1.5 0 0 0 3 0z"></path>
+            </svg>
+            <p>{`${data.distancefromCity} km from city center`}</p>
+          </div>
+          <div className={styles.sPrice}>
+            <p>{`₹ ${data.lowPrice.price}`}</p>
+            <p>a night</p>
           </div>
         </div>
       </div>
