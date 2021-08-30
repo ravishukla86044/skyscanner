@@ -251,9 +251,9 @@ function CartPage({ formData }) {
       setData((pre) => [...pre].filter((i) => Number(i.star) === 4));
     } else if (item.id === 12 && arr[item.id] === false) {
       setData((pre) => [...pre].filter((i) => Number(i.star) === 3));
-    } else if (item.id === 12 && arr[item.id] === false) {
+    } else if (item.id === 13 && arr[item.id] === false) {
       setData((pre) => [...pre].filter((i) => Number(i.star) === 2));
-    } else if (item.id === 12 && arr[item.id] === false) {
+    } else if (item.id === 14 && arr[item.id] === false) {
       setData((pre) => [...pre].filter((i) => Number(i.star) === 1));
     } else if (item.id === 27 && arr[item.id] === false) {
       setData((pre) => [...pre].filter((i) => Number(i.rating) === 5));
