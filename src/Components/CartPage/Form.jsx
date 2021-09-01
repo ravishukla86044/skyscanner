@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Form.module.css";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -111,8 +111,9 @@ const Form = ({ formData, form, setForm }) => {
   };
   const handleClick = () => {
     setForm((pre) => ({ ...formData.current }));
+    console.log(form, "this is form");
     axios.put("http://localhost:8000/userData/1", formData.current).then((res) => {
-      console.log("success");
+      // console.log("success");
     });
   };
   const classes = useStyles();
