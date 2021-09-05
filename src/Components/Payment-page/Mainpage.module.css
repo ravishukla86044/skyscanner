@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-around;
   width: 85%;
-  margin-left:15%;
-  
+  margin-left: 15%;
 }
 .mainguest {
   width: 35%;
@@ -12,17 +11,16 @@
   width: 60%;
 }
 
-.footerpayment{
-    margin-top:60px;
-    width:100%;
-    margin-left: 15px;
-    color: #68697f;
-    font-size: .75rem;
-    line-height: 1.25rem;
- 
+.footerpayment {
+  margin-top: 80px;
+  width: 100%;
+  margin-left: 15px;
+  color: #68697f;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
-.footerpayment>a{
-    text-decoration: none;
+.footerpayment > a {
+  text-decoration: none;
 }
 
 @media (max-width: 1000px) {
@@ -31,10 +29,10 @@
   }
 
   .hoteldetails > div {
-  
-  
     box-sizing: border-box;
     padding: 20px !important;
     margin: 0px -30px;
   }
+}
+.bdddox {
 }
