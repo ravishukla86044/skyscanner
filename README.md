@@ -68,30 +68,50 @@ npm run start
 ### We have focused mainly on:
 
 1. Landing Page
+2. </br>
 
 <h4>This is our landing page </h4>
-<img src="https://ibb.co/FwJMpyx" width="400"/>
 </br>
-<img src="https://ibb.co/MSH36qr" width="400"/>
+<a href="https://ibb.co/r7vX3BV"><img src="https://i.ibb.co/mDSP0n3/Screenshot-1101.png" alt="Screenshot-1101" border="0" width="400"></a>
+</br>
+</br>
+<a href="https://ibb.co/brNRSFM"><img src="https://i.ibb.co/MRP5Yfx/Screenshot-1102.png" alt="Screenshot-1102" border="0" width="400"></a>
+
+
+</br>
 
 2. Hotels List page 
+</br>
 
 <h4>Here user can also search and filter the data as per their requirement:- </h4>
-<img src="https://ibb.co/fG6wMPT" width="400"/>
+</br>
+<a href="https://ibb.co/Hd1srJj"><img src="https://i.ibb.co/16h59Sk/Screenshot-1103.png" alt="Screenshot-1103" border="0" width="400"></a>
+</br>
 
 3. Hotel Description page
+</br>
 <h4> Rooms available </h4>
-<img src="https://ibb.co/F4TdMnw" width="400"/>
+</br>
+<a href="https://ibb.co/hLGrp7x"><img src="https://i.ibb.co/mbndQDr/Screenshot-1104.png" alt="Screenshot-1104" border="0" width="400"></a>
+
+</br>
 
 4.Hotel's rooms Amenities avialable
+</br>
 
 <a href="https://ibb.co/SJDX0Ts"><img src="https://i.ibb.co/6NcRbhn/Screenshot-1105.png" alt="Screenshot-1105" border="0" width="400" ></a>
+</br>
 
 
 5.Payment Page
-<a href="https://ibb.co/tmH4dj4"><img src="https://i.ibb.co/C1wzrCz/Screenshot-1106.png" alt="Screenshot-1106" border="0"></a>
+</br>
+
+<a href="https://ibb.co/tmH4dj4"><img src="https://i.ibb.co/C1wzrCz/Screenshot-1106.png" alt="Screenshot-1106" border="0" width="400"></a>
+</br>
 6. various Payment with card 
-<a href="https://ibb.co/0XRtGGv"><img src="https://i.ibb.co/8BLc77t/Screenshot-1107.png" alt="Screenshot-1107" border="0"></a>
+ </br>
+<a href="https://ibb.co/0XRtGGv"><img src="https://i.ibb.co/8BLc77t/Screenshot-1107.png" alt="Screenshot-1107" border="0" width="400"></a>
+</br>
 
 
 ## Team Members and Contributors
