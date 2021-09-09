@@ -89,10 +89,9 @@ npm run start
 
 
 5.Payment Page
- <img src="https://ibb.co/tmH4dj4" width="400"/>
+<a href="https://ibb.co/tmH4dj4"><img src="https://i.ibb.co/C1wzrCz/Screenshot-1106.png" alt="Screenshot-1106" border="0"></a>
 6. various Payment with card 
-<img src="https://ibb.co/0XRtGGv" width="400"/>
-
+<a href="https://ibb.co/0XRtGGv"><img src="https://i.ibb.co/8BLc77t/Screenshot-1107.png" alt="Screenshot-1107" border="0"></a>
 
 
 ## Team Members and Contributors
