@@ -5,7 +5,7 @@ import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
 
 export default function Stdt({ formData }) {
-   var res = "";
+  var res = "";
   const neDate = new Date();
   let Monnt_2day = Number(neDate.getMonth());
 
@@ -47,8 +47,7 @@ export default function Stdt({ formData }) {
       ...formData.current,
       sDate: date,
     };
-    console.log("sDate", formData)
-
+    console.log("sDate", formData);
   };
 
   return (

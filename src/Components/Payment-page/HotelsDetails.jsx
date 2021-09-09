@@ -4,15 +4,19 @@ import styled from "styled-components";
 const HotelsDetails = ({ formData }) => {
   const [hotelsData, setHotelData] = useState([]);
   const x = 10;
-
-  console.log(formData);
+  // axios.get("https://ravi-mock-server.herokuapp.com/userData/1").then((res) => {
+  //   setHotelData([res.data]);
+  //   //console.log(res.data, "this is new");
+  // });
+  // console.log(formData);
 
   useEffect(() => {
-    axios.get("  http://localhost:8000/userData").then((res) => {
-      setHotelData(res.data);
+    axios.get("https://ravi-mock-server.herokuapp.com/userData/1").then((res) => {
+      setHotelData([res.data]);
+      //console.log(res.data, "this is new");
     });
   }, []);
-  console.log(hotelsData);
+  //console.log(hotelsData);
   const HotelsDes = styled.div`
     width: 545.6px;
     height: auto;

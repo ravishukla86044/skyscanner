@@ -112,7 +112,7 @@ const Form = ({ formData, form, setForm }) => {
   const handleClick = () => {
     setForm((pre) => ({ ...formData.current }));
     console.log(form, "this is form");
-    axios.put("http://localhost:8000/userData/1", formData.current).then((res) => {
+    axios.put("https://ravi-mock-server.herokuapp.com/userData/1", formData.current).then((res) => {
       // console.log("success");
     });
   };

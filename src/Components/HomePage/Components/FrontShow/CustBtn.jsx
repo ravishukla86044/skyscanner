@@ -59,7 +59,7 @@ export default function CustBtn({ formData }) {
       return;
     }
     axios
-      .put("http://localhost:8000/userData/1", formData.current)
+      .put("https://ravi-mock-server.herokuapp.com/userData/1", formData.current)
       .then((res) => {
         history.push("/hotels");
         console.log(formData.current);
