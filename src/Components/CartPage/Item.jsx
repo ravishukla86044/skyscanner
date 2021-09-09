@@ -109,7 +109,7 @@ function Item({ data, formData, form }) {
     formData.current.target.TotolPrice = data.lowPrice.price * Math.ceil(form.stays / 2) * diffDays;
     formData.current.target.days = diffDays;
     history.push(`/hotelsdescription/${data.name}`);
-    axios.put("http://localhost:8000/userData/1", formData.current);
+    axios.put("https://ravi-mock-server.herokuapp.com/userData/1", formData.current);
   };
 
   return width > 600 ? (

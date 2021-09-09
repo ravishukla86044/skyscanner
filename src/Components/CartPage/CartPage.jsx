@@ -211,7 +211,7 @@ function CartPage({ formData }) {
   useState(() => {
     setData((pre) => [...pre]);
     axios
-      .get("http://localhost:8000/userData/1")
+      .get("https://ravi-mock-server.herokuapp.com/userData/1")
       .then((res) => {
         console.log(res, "this is response");
         setForm(res.data);
