@@ -62,7 +62,7 @@ export default function CustBtn({ formData }) {
       .put("https://ravi-mock-server.herokuapp.com/userData/1", formData.current)
       .then((res) => {
         history.push("/hotels");
-        console.log(formData.current);
+        //console.log(formData.current);
       })
       .catch((err) => {
         alert("something is worng please refresh the page");

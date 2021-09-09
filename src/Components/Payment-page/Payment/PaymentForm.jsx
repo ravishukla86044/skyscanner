@@ -8,6 +8,7 @@ import PaymentSucces from "./PaymentSucces";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import { setPaymentSucceeded } from "../../Redux/Auth/authAction";
+import { useHistory } from "react-router-dom";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -30,6 +31,7 @@ const CARD_OPTIONS = {
 };
 
 export default function PaymentForm() {
+  const history = useHistory();
   const [success, setSuccess] = useState(false);
   const [isLoading, setisLoading] = React.useState(false);
   const [isError, setisError] = React.useState(false);
@@ -42,9 +44,7 @@ export default function PaymentForm() {
 
   const dispatch = useDispatch();
 
-  const paymentConfirmation = useSelector(
-    (state) => state.auth.isPaymentSuccess
-  );
+  const paymentConfirmation = useSelector((state) => state.auth.isPaymentSuccess);
 
   console.log(paymentConfirmation);
   const handleSubmit = async (e) => {
@@ -54,38 +54,32 @@ export default function PaymentForm() {
       card: elements.getElement(CardElement),
     });
 
-   
+    if (!error) {
+      try {
+        const { id } = paymentMethod;
+        setisLoading(true);
+        const response = await axios.post("https://stripepaymentstraw.herokuapp.com/payment", {
+          amount: 1000,
+          id,
+        });
 
-    if(!error) {
-        try {
-            const {id} = paymentMethod
-            setisLoading(true)
-            const response = await axios.post("https://stripepaymentstraw.herokuapp.com/payment", {
-                amount: 1000,
-                id
-            })
-
-            if(response.data.success) {
-                console.log("Successful payment")
-                setSuccess(true)
-                setisLoading(false)
-                dispatch(setPaymentSucceeded(true))
-              
-
-            }
-
-        } catch (error) {
-            console.log("Error", error)
-            setisError(true)
-            setisLoading(false)
+        if (response.data.success) {
+          console.log("Successful payment");
+          setSuccess(true);
+          setisLoading(false);
+          dispatch(setPaymentSucceeded(true));
         }
+      } catch (error) {
+        console.log("Error", error);
+        setisError(true);
+        setisLoading(false);
+      }
     } else {
       console.log(error.message);
       setisInvalid(true);
     }
   };
 
- 
   return (
     <>
       {!success ? (
@@ -144,7 +138,10 @@ export default function PaymentForm() {
               <PaymentSucces />
               <CancelOutlinedIcon
                 className={styles.closemodal}
-                onClick={() => setcloseSuccess(!closeSuccess)}
+                onClick={() => {
+                  setcloseSuccess(!closeSuccess);
+                  history.replace("/");
+                }}
               />
             </div>
           )}
