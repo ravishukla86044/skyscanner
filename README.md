@@ -12,7 +12,7 @@ Executing the commands mentioned below one by one in your command line will help
 **Cloning**
 
 ```
-git clone https://github.com/amit-web/Project-hirist-clone.git
+https://github.com/ravishukla86044/skyscanner.git
 
 npm install
 
@@ -23,7 +23,7 @@ After cloning the repo to get the JSON data from json-server, you should run the
 **For data**
 
 ```
-json-server hiristData.json --port 8000
+json-server db.json --port 8000
 
 
 ```
