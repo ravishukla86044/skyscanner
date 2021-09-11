@@ -47,7 +47,7 @@ export default function Stdt({ formData }) {
       ...formData.current,
       sDate: date,
     };
-    console.log("sDate", formData);
+    //console.log("sDate", formData);
   };
 
   return (

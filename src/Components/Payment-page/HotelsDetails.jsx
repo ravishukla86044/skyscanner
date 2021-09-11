@@ -4,11 +4,6 @@ import styled from "styled-components";
 const HotelsDetails = ({ formData }) => {
   const [hotelsData, setHotelData] = useState([]);
   const x = 10;
-  // axios.get("https://ravi-mock-server.herokuapp.com/userData/1").then((res) => {
-  //   setHotelData([res.data]);
-  //   //console.log(res.data, "this is new");
-  // });
-  // console.log(formData);
 
   useEffect(() => {
     axios.get("https://ravi-mock-server.herokuapp.com/userData/1").then((res) => {

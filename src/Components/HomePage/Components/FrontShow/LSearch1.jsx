@@ -38,7 +38,7 @@ export default function LSearch1({ formData }) {
       ...formData.current,
       location: inputValue,
     };
-    console.log(formData);
+    //console.log(formData);
   }, []);
 
   const [options, setOptions] = React.useState([]);
@@ -121,7 +121,7 @@ export default function LSearch1({ formData }) {
           ...formData.current,
           location: newInputValue,
         };
-        console.log(formData);
+        // console.log(formData);
       }}
       renderInput={(params) => (
         <TextField {...params} placeholder="Enter destination name" variant="outlined" fullWidth />

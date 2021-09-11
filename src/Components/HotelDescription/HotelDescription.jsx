@@ -48,7 +48,7 @@ export const HotelDescription = ({ formData }) => {
   const review = formData.current.target.reviews;
   const price = Number(formData.current.target.lowPrice.price);
   //  console.log(price);
-  console.log(star);
+  //console.log(star);
 
   function Star({ n }) {
     let arr = [];

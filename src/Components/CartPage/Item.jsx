@@ -93,7 +93,7 @@ function Item({ data, formData, form }) {
   const d2 = new Date(form.lDate);
   const diffTime = Math.abs(d2 - d1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  console.log(diffDays, typeof diffDays, formData);
+  //console.log(diffDays, typeof diffDays, formData);
   window.addEventListener("resize", handleResize);
   function handleResize() {
     setWidth(window.innerWidth);

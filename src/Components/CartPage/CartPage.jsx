@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { Redirect } from "react-router-dom";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import { ItemPage } from "./ItemPage";
@@ -10,7 +9,6 @@ import { Star } from "./Item";
 import { dataa } from "./utils/dataa";
 import Heading from "../HomePage/Components/Header/Heading";
 import Footer from "../HomePage/Components/Footer/Footer";
-
 import { Form } from "./Form";
 import axios from "axios";
 
@@ -213,11 +211,11 @@ function CartPage({ formData }) {
     axios
       .get("https://ravi-mock-server.herokuapp.com/userData/1")
       .then((res) => {
-        console.log(res, "this is response");
+        //console.log(res, "this is response");
         setForm(res.data);
       })
       .catch((err) => {
-        console.log(err);
+        //console.log(err);
       });
     console.log("useusss");
   }, [formData]);

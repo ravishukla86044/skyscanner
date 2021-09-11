@@ -57,7 +57,7 @@ const MainGuest = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // axios.post("http://localhost:8000/userData",payload);
-    console.log(payload);
+    //console.log(payload);
 
     setName("");
     setEmail("");

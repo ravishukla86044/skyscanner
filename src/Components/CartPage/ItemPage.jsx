@@ -7,7 +7,7 @@ function ItemPage({ toggleDrawer, data, setData, dataa, formData, form }) {
   const [low, setLow] = useState(false);
   const [pBool, setpBool] = useState(false);
   const [sBool, setSBool] = useState(false);
-  console.log(form, "this is form in itempage");
+  //console.log(form, "this is form in itempage");
   const handleBottom = (e, n) => {
     setpBool(false);
     setSBool(false);

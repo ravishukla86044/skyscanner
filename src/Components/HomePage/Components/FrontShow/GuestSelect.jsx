@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import TextField from "@material-ui/core/TextField";
 import { useState, useEffect } from "react";
 
@@ -16,7 +16,7 @@ export default function GuestSelect({ formData }) {
       ...formData.current,
       stays: e.target.value,
     };
-    console.log(formData);
+    //console.log(formData);
   };
   return (
     <TextField

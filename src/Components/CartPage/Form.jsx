@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./Form.module.css";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import FlightIcon from "@material-ui/icons/Flight";
 import KingBedIcon from "@material-ui/icons/KingBed";
 import DriveEtaIcon from "@material-ui/icons/DriveEta";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-// import TextField from '@material-ui/core/TextField';
-import LSearch1 from "../HomePage/Components/FrontShow/LSearch1";
 import Stdt from "../HomePage/Components/FrontShow/Stdt";
 import Ledt from "../HomePage/Components/FrontShow/Ledt";
-import GuestSelect from "../HomePage/Components/FrontShow/GuestSelect";
-import cx from "classnames";
-import CustBtn from "../HomePage/Components/FrontShow/CustBtn";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -111,7 +103,7 @@ const Form = ({ formData, form, setForm }) => {
   };
   const handleClick = () => {
     setForm((pre) => ({ ...formData.current }));
-    console.log(form, "this is form");
+    //console.log(form, "this is form");
     axios.put("https://ravi-mock-server.herokuapp.com/userData/1", formData.current).then((res) => {
       // console.log("success");
     });
