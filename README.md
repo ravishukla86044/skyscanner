@@ -1,4 +1,5 @@
 # Project-Skyscanner-clone
+<<<<<<< HEAD
 
 Skyscanner Ltd. Skyscanner is a metasearch engine and travel agency based in Edinburgh, Scotland. The site is available in over 30 languages and is used by 100 million people per month. The company lets people research and book travel options for their trips, including flights, hotels, and car hire.
 </br>
@@ -36,6 +37,45 @@ cd ./skyscanner
 npm run start
 
 ```
+=======
+Skyscanner Ltd. Skyscanner is a metasearch engine and travel agency based in Edinburgh, Scotland. The site is available in over 30 languages and is used by 100 million people per month. The company lets people research and book travel options for their trips, including flights, hotels, and car hire.
+</br>
+<img src="https://www.skyscanner.com.tr/sttc/blackbird/opengraph_solid_logo.png">  
+</br>
+
+**Our team was given a task to Clone the Skyscanner.com Website.**
+
+## Installing and Running
+
+Executing the commands mentioned below one by one in your command line will help in making this React app.
+**Cloning**
+
+```
+https://github.com/ravishukla86044/skyscanner.git
+
+npm install
+
+```
+
+After cloning the repo to get the JSON data from json-server, you should run the below commands.
+
+**For data**
+
+```
+json-server db.json --port 8000
+
+
+```
+
+**To run the react app execute the below command**
+
+```
+cd ./skyscanner
+npm run start
+
+```
+
+>>>>>>> 71835260d3dcd7cff39abde22bd8270910a021c6
 
 ## NPM Packages used
 
@@ -64,6 +104,7 @@ npm run start
 ## Features
 
 - Fullscreen mode
+<<<<<<< HEAD
 - Easy navigation by category section\_
 
 ### We have focused mainly on:
@@ -96,21 +137,71 @@ npm run start
 
 </br>
 
+=======
+- Easy navigation by category section_
+
+
+### We have focused mainly on:
+
+1. Landing Page
+ </br>
+
+<h4>This is our landing page </h4>
+</br>
+<a href="https://ibb.co/r7vX3BV"><img src="https://i.ibb.co/mDSP0n3/Screenshot-1101.png" alt="Screenshot-1101" border="0" width="400"></a>
+</br>
+</br>
+<a href="https://ibb.co/brNRSFM"><img src="https://i.ibb.co/MRP5Yfx/Screenshot-1102.png" alt="Screenshot-1102" border="0" width="400"></a>
+
+
+</br>
+
+2. Hotels List page 
+</br>
+
+<h4>Here user can also search and filter the data as per their requirement:- </h4>
+</br>
+<a href="https://ibb.co/Hd1srJj"><img src="https://i.ibb.co/16h59Sk/Screenshot-1103.png" alt="Screenshot-1103" border="0" width="400"></a>
+</br>
+
+3. Hotel Description page
+</br>
+<h4> Rooms available </h4>
+</br>
+<a href="https://ibb.co/hLGrp7x"><img src="https://i.ibb.co/mbndQDr/Screenshot-1104.png" alt="Screenshot-1104" border="0" width="400"></a>
+
+</br>
+
+>>>>>>> 71835260d3dcd7cff39abde22bd8270910a021c6
 4.Hotel's rooms Amenities avialable
 </br>
 
 <a href="https://ibb.co/SJDX0Ts"><img src="https://i.ibb.co/6NcRbhn/Screenshot-1105.png" alt="Screenshot-1105" border="0" width="400" ></a>
 </br>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 71835260d3dcd7cff39abde22bd8270910a021c6
 5.Payment Page
 </br>
 
 <a href="https://ibb.co/tmH4dj4"><img src="https://i.ibb.co/C1wzrCz/Screenshot-1106.png" alt="Screenshot-1106" border="0" width="400"></a>
+<<<<<<< HEAD
 </br> 6. various Payment with card
 </br>
 <a href="https://ibb.co/0XRtGGv"><img src="https://i.ibb.co/8BLc77t/Screenshot-1107.png" alt="Screenshot-1107" border="0" width="400"></a>
 </br>
 
+=======
+</br>
+6. various Payment with card 
+ </br>
+<a href="https://ibb.co/0XRtGGv"><img src="https://i.ibb.co/8BLc77t/Screenshot-1107.png" alt="Screenshot-1107" border="0" width="400"></a>
+</br>
+
+
+>>>>>>> 71835260d3dcd7cff39abde22bd8270910a021c6
 ## Team Members and Contributors
 
 - [@Amit Mehta](https://github.com/amit-web)
