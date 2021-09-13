@@ -36,9 +36,11 @@ import { useParams } from "react-router-dom";
 import styles from "../../Components/CartPage/Item.module.css";
 import Footer from "../../Components/HomePage/Components/Footer/Footer";
 import Heading from "../../Components/HomePage/Components/Header/Heading";
+import { useHistory } from "react-router-dom";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
-  console.log(formData, name);
+  const history = useHistory();
+  //console.log(formData, name);
   const img = formData.current.target.img.slice(0, 6);
   const star = Number(formData.current.target.star);
   const address = formData.current.target.addrs;
@@ -47,7 +49,7 @@ export const HotelDescription = ({ formData }) => {
   const review = formData.current.target.reviews;
   const price = Number(formData.current.target.lowPrice.price);
   //  console.log(price);
-  console.log(star);
+  //console.log(star);
 
   function Star({ n }) {
     let arr = [];
@@ -198,6 +200,9 @@ export const HotelDescription = ({ formData }) => {
                 color="primary"
                 variant="contained"
                 size="small"
+                onClick={() => {
+                  history.push(`/payment/${name}`);
+                }}
                 className="MainPrice_MainPrice__button__MY5pC BpkButtonBase_bpk-button__3aBJ2 t13"
               >
                 <ArrowDownwardIcon className="t14" />
