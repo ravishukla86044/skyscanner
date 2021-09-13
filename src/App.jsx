@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <Switch>
+
         <Route exact path="/">
           <HomeSkyPg formData={formData} />
         </Route>
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/hotelsdescription/:name">
           <HotelDescription formData={formData} />
         </Route>
+
       </Switch>
       <CartPage />
     </div>
