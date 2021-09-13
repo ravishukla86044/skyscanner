@@ -32,14 +32,13 @@ import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import Button from "@material-ui/core/Button";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { dataa } from "../CartPage/utils/dataa";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "../../Components/CartPage/Item.module.css";
 import Footer from "../../Components/HomePage/Components/Footer/Footer";
 import Heading from "../../Components/HomePage/Components/Header/Heading";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
   console.log(formData, name);
-  const history = useHistory();
   const img = formData.current.target.img.slice(0, 6);
   const star = Number(formData.current.target.star);
   const address = formData.current.target.addrs;
@@ -48,7 +47,7 @@ export const HotelDescription = ({ formData }) => {
   const review = formData.current.target.reviews;
   const price = Number(formData.current.target.lowPrice.price);
   //  console.log(price);
-  //console.log(star);
+  console.log(star);
 
   function Star({ n }) {
     let arr = [];
@@ -134,7 +133,7 @@ export const HotelDescription = ({ formData }) => {
             {name}
           </h3>
         </div>
-        <div style={{ marginTop: "16px", marginLeft: "5%" }}>
+        <div className="t1">
           <div className="SectionHeader_SectionHeader__1YzyH">
             <h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
               <Star n={star} />
@@ -144,58 +143,23 @@ export const HotelDescription = ({ formData }) => {
       </div>
 
       <div className="thotelAdress">
-        <p style={{ marginLeft: "10%", fontSize: "18px", fontFamily: "serif" }}>{address}</p>
+        <p className="t2">{address}</p>
       </div>
 
       <div className="tbelowAdress">
         <div>
-          <div
-            style={{
-              backgroundColor: "rgb(0,136,126)",
-              borderRadius: "30px",
-              width: "90px",
-              height: "60px",
-              textAlign: "center",
-              outline: "none",
-              paddingTop: "2px",
-              boxSizing: "border-box",
-            }}
-          >
-            <p style={{ fontSize: "22px", fontWeight: "bold", color: "white" }}>{rating}</p>
+          <div className="t3">
+            <p className="t32">{rating}</p>
           </div>
         </div>
         <div>
-          <div
-            style={{ marginLeft: "35px", marginTop: "2px", marginRight: "20px", width: "200px" }}
-          >
+          <div className="t4">
             <Dots n={rating} />
-            <p
-              style={{
-                fontSize: "18px",
-                fontFamily: "serif",
-                textDecoration: "underline",
-                color: "blue",
-              }}
-            >
-              Based on {review} reviews
-            </p>
+            <p className="t5">Based on {review} reviews</p>
           </div>
         </div>
 
-        <div
-          style={{
-            width: "150px",
-            height: "25px",
-            borderRadius: "50px",
-            backgroundColor: "lightGray",
-            textAlign: "center",
-            fontFamily: "serif",
-            display: "flex",
-            justifyContent: "space-around",
-            padding: "5px",
-            boxSizing: "border-box",
-          }}
-        >
+        <div className="t6">
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -210,41 +174,33 @@ export const HotelDescription = ({ formData }) => {
             </svg>
           </div>
           <div>
-            <p style={{ fontSize: "14px", fontFamily: "serif", margin: "0px" }}>
-              Cleanliness {clean}/5
-            </p>
+            <p className="t7">Cleanliness {clean}/5</p>
           </div>
         </div>
       </div>
-      <div className="outterTpay" style={{ width: "80%", margin: "auto", marginBottom: "150px" }}>
+      <div className="outterTpay t8">
         <hr></hr>
-        <div className="tpay" style={{ display: "flex" }}>
-          <div style={{ display: "flex" }}>
+        <div className="tpay t9">
+          <div className="t9">
             <h5>Deals</h5>
-            <h5 style={{ marginLeft: "50px" }}>Reviews</h5>
-            <h5 style={{ marginLeft: "50px" }}>Location</h5>
-            <h5 style={{ marginLeft: "50px" }}>Details</h5>
-            <h5 style={{ marginLeft: "50px" }}>Anmeties</h5>
+            <h5 className="t9">Reviews</h5>
+            <h5 className="t10">Location</h5>
+            <h5 className="t10">Details</h5>
+            <h5 className="t10">Anmeties</h5>
           </div>
 
-          <div className="tprice" style={{ display: "flex", marginLeft: "42%" }}>
+          <div className="tprice t11">
             <div>
               <h1>₹ {price}</h1>
             </div>
-            <div
-              onClick={() => {
-                history.push(`/payment/${name}`);
-              }}
-              style={{ marginTop: "16px", marginLeft: "5px" }}
-            >
+            <div className="t12">
               <Button
                 color="primary"
                 variant="contained"
                 size="small"
-                className="MainPrice_MainPrice__button__MY5pC BpkButtonBase_bpk-button__3aBJ2 "
-                style={{ background: "rgb(0,136,126)", width: "24px", height: "35px" }}
+                className="MainPrice_MainPrice__button__MY5pC BpkButtonBase_bpk-button__3aBJ2 t13"
               >
-                <ArrowDownwardIcon style={{ padding: "10px" }} />
+                <ArrowDownwardIcon className="t14" />
               </Button>
             </div>
           </div>
@@ -252,7 +208,7 @@ export const HotelDescription = ({ formData }) => {
         <hr></hr>
       </div>
 
-      <div className="adviser" style={{ marginLeft: "10%", marginBottom: "100px" }}>
+      <div className="adviser t15">
         <div className="SectionHeader_SectionHeader__1YzyH">
           <h1 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
             <img
@@ -271,23 +227,23 @@ export const HotelDescription = ({ formData }) => {
           <img
             src="https://cdn4.iconfinder.com/data/icons/commercial-and-business-set-2/512/3076_man_c-512.png"
             alt=""
-            style={{ marginTop: "20px" }}
+            className="t16"
           />
         </div>
 
         <div>
           <h4>Buisiness Travellar</h4>
-          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
-          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+          <p className="t17">Comment: 9 Apr 2020</p>
+          <p className="t17">Stayed in: Feb 2020</p>
         </div>
 
         <div>
-          <div style={{ display: "flex" }}>
+          <div className="t9">
             <h4>5.0/</h4>
             <h5>5</h5>
             <img
               src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
-              style={{ marginLeft: "15px" }}
+              className="t18"
               alt=""
             />
           </div>
@@ -301,11 +257,11 @@ export const HotelDescription = ({ formData }) => {
             before we left to the airport. I did have some trouble with the room. Had problems with
             the toilet in 2 different rooms. They did try their best at resolving this.
           </p>
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <ThumbUpAltRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "15px" }}>
+            <div className="t20">
               <p>Helpfull</p>
             </div>
           </div>
@@ -314,26 +270,22 @@ export const HotelDescription = ({ formData }) => {
 
       <div className="belowAdviser">
         <div>
-          <img
-            src="https://static.thenounproject.com/png/851649-200.png"
-            alt=""
-            style={{ marginTop: "20px" }}
-          />
+          <img src="https://static.thenounproject.com/png/851649-200.png" alt="" className="t21" />
         </div>
 
         <div>
           <h4>Family Travellar</h4>
-          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
-          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+          <p className="t22">Comment: 9 Apr 2020</p>
+          <p className="t22">Stayed in: Feb 2020</p>
         </div>
 
         <div>
-          <div style={{ display: "flex" }}>
+          <div className="t9">
             <h4>5.0/</h4>
             <h5>5</h5>
             <img
               src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
-              style={{ marginLeft: "15px" }}
+              className="t20"
               alt=""
             />
           </div>
@@ -347,11 +299,11 @@ export const HotelDescription = ({ formData }) => {
             before we left to the airport. I did have some trouble with the room. Had problems with
             the toilet in 2 different rooms. They did try their best at resolving this.
           </p>
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <ThumbUpAltRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "15px" }}>
+            <div className="t20">
               <p>Helpfull</p>
             </div>
           </div>
@@ -363,23 +315,23 @@ export const HotelDescription = ({ formData }) => {
           <img
             src="https://cdn2.iconfinder.com/data/icons/gulu-vacation/100/travelling_convert-512.png"
             alt=""
-            style={{ marginTop: "20px" }}
+            className="t21"
           />
         </div>
 
         <div>
           <h4>Anonymous traveller</h4>
-          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
-          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+          <p className="t17">Comment: 9 Apr 2020</p>
+          <p className="t17">Stayed in: Feb 2020</p>
         </div>
 
         <div>
-          <div style={{ display: "flex" }}>
+          <div className="t9">
             <h4>5.0/</h4>
             <h5>5</h5>
             <img
               src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
-              style={{ marginLeft: "15px" }}
+              className="t18"
               alt=""
             />
           </div>
@@ -392,11 +344,11 @@ export const HotelDescription = ({ formData }) => {
             and he really took care of our guests very well. A special Thanks to Chef who cooked the
             delicious food for our guests. Thank you so very much for making our event so memorable.
           </p>
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <ThumbUpAltRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "15px" }}>
+            <div className="t20">
               <p>Helpfull</p>
             </div>
           </div>
@@ -408,23 +360,23 @@ export const HotelDescription = ({ formData }) => {
           <img
             src="https://cdn2.iconfinder.com/data/icons/leisure-entertainment-minimalist-icon-set/100/travel-globe-01-512.png"
             alt=""
-            style={{ marginTop: "20px" }}
+            className="t16"
           />
         </div>
 
         <div>
           <h4>Anonymous traveller</h4>
-          <p style={{ color: "grey", fontSize: "12px" }}>Comment: 9 Apr 2020</p>
-          <p style={{ color: "grey", fontSize: "12px" }}>Stayed in: Feb 2020</p>
+          <p className="t17">Comment: 9 Apr 2020</p>
+          <p className="t17">Stayed in: Feb 2020</p>
         </div>
 
         <div>
-          <div style={{ display: "flex" }}>
+          <div className="t9">
             <h4>5.0/</h4>
             <h5>5</h5>
             <img
               src="https://www.tripadvisor.com/img/cdsi/img2/ratings/traveler/s5.0-64600-5.svg"
-              style={{ marginLeft: "15px" }}
+              className="t18"
               alt=""
             />
           </div>
@@ -437,11 +389,11 @@ export const HotelDescription = ({ formData }) => {
             and all the Melange restaurant employees (for example, Mr. Promod). Thanks for making
             our Christmas 2020 memorable, Radisson Blu!
           </p>
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <ThumbUpAltRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "15px" }}>
+            <div className="t20">
               <p>Helpfull</p>
             </div>
           </div>
@@ -456,7 +408,7 @@ export const HotelDescription = ({ formData }) => {
       </div>
       <div className="tcheckIn2">
         <div>
-          <QueryBuilderIcon style={{ fontSize: "80px" }} />
+          <QueryBuilderIcon fontSize="large" className="t23" />
         </div>
         <div aria-label="Check in from: 12:00">
           <p className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xl__5FNve CheckInCheckOut_CheckInCheckOut__text__xuhbC">
@@ -486,7 +438,7 @@ export const HotelDescription = ({ formData }) => {
 
       <div className="tbelowgood">
         <div className="tbelowgood1">
-          <AccessibilityNewIcon style={{ fontSize: "45px", padding: "20px" }} />
+          <AccessibilityNewIcon className="t24" />
           <div>
             <h3>Children</h3>
           </div>
@@ -497,7 +449,7 @@ export const HotelDescription = ({ formData }) => {
         <hr></hr>
 
         <div className="tbelowgood1">
-          <PetsIcon style={{ fontSize: "45px", padding: "20px" }} />
+          <PetsIcon className="t24" />
           <div>
             <h3>Pets</h3>
           </div>
@@ -508,7 +460,7 @@ export const HotelDescription = ({ formData }) => {
         <hr></hr>
 
         <div className="tbelowgood1">
-          <LocalDiningIcon style={{ fontSize: "45", padding: "20px" }} />
+          <LocalDiningIcon className="t24" />
           <div>
             <h3>Breakfast</h3>
           </div>
@@ -519,7 +471,7 @@ export const HotelDescription = ({ formData }) => {
         <hr></hr>
 
         <div className="tbelowgood1 tbelowgood4">
-          <SmsFailedIcon style={{ fontSize: "45px", padding: "20px" }} />
+          <SmsFailedIcon className="t24" />
           <div>
             <h3>Important information from the hotel</h3>
           </div>
@@ -534,7 +486,7 @@ export const HotelDescription = ({ formData }) => {
         <hr></hr>
 
         <div className="tbelowgood1 tbelowgood5">
-          <LocationCityIcon style={{ fontSize: "45px", padding: "20px" }} />
+          <LocationCityIcon className="t24" />
           <div>
             <h3>Important information about the city</h3>
           </div>
@@ -550,7 +502,7 @@ export const HotelDescription = ({ formData }) => {
         <hr></hr>
 
         <div className="tbelowgood1">
-          <PaymentIcon style={{ fontSize: "45px", padding: "20px" }} />
+          <PaymentIcon className="t24" />
           <div>
             <h3>Accepted payment methods</h3>
           </div>
@@ -592,14 +544,7 @@ export const HotelDescription = ({ formData }) => {
             Hotel Description
           </h3>
         </div>
-        <div
-          className="toutterContainer"
-          style={{
-            gridTemplateRows: "30px 30px 30px 30px 30px 30px 30px 30px",
-            width: "80%",
-            margin: "auto",
-          }}
-        >
+        <div className="toutterContainer t25">
           {img.map((item, i) => {
             return (
               <div className={`ttopItem${i + 1}`}>
@@ -611,7 +556,7 @@ export const HotelDescription = ({ formData }) => {
         </div>
       </div>
 
-      <div style={{ width: "80%", textAlign: "left", margin: "auto", marginBottom: "150px" }}>
+      <div className="t26">
         <p className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxl__1Sso6 HotelDescription_HotelDescription__hotelName__3oGPv ">
           Radisson Blu Bengaluru Outer Ring Road
         </p>
@@ -624,10 +569,7 @@ export const HotelDescription = ({ formData }) => {
 
       <div className="tamenities">
         <div className="SectionHeader_SectionHeader__1YzyH">
-          <h3
-            className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs"
-            style={{ marginLeft: "10%", marginTop: "50px", marginBottom: "100px" }}
-          >
+          <h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs t27">
             Amenities
           </h3>
         </div>
@@ -635,32 +577,32 @@ export const HotelDescription = ({ formData }) => {
 
       <div className="tamenities1">
         <div>
-          <WifiIcon fontSize="medium" style={{ padding: "30px" }} />
+          <WifiIcon fontSize="medium" className="t28" />
           <p>Wi-Fi</p>
         </div>
 
         <div>
-          <LocalParkingRoundedIcon fontSize="medium" style={{ padding: "30px" }} />
+          <LocalParkingRoundedIcon fontSize="medium" className="t28" />
           <p>Parking</p>
         </div>
 
         <div>
-          <AcUnitRoundedIcon fontSize="medium" style={{ padding: "30px" }} />
+          <AcUnitRoundedIcon fontSize="medium" className="t28" />
           <p>Air Conditioning</p>
         </div>
 
         <div>
-          <AirportShuttleRoundedIcon fontSize="medium" style={{ padding: "30px" }} />
+          <AirportShuttleRoundedIcon fontSize="medium" className="t28" />
           <p>Airport Shuttle</p>
         </div>
 
         <div>
-          <PoolRoundedIcon fontSize="medium" style={{ padding: "30px" }} />
+          <PoolRoundedIcon fontSize="medium" className="t28" />
           <p>Pool</p>
         </div>
 
         <div>
-          <FitnessCenterRoundedIcon fontSize="medium" style={{ padding: "30px" }} />
+          <FitnessCenterRoundedIcon fontSize="medium" className="t28" />
           <p>Fitness Center</p>
         </div>
       </div>
@@ -671,34 +613,34 @@ export const HotelDescription = ({ formData }) => {
             <h3>Buisiness Facilities</h3>
           </div>
 
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <MeetingRoomRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "3px" }}>
+            <div className="t29">
               <p>Meeting Room</p>
             </div>
           </div>
 
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <ArrowForwardRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "3px" }}>
+            <div className="t29">
               <p>Meeting Facilities</p>
             </div>
           </div>
 
-          <div style={{ display: "flex" }}>
-            <div style={{ marginTop: "16px" }}>
+          <div className="t9">
+            <div className="t19">
               <ArrowForwardRoundedIcon fontSize="small" />
             </div>
-            <div style={{ marginLeft: "3px" }}>
+            <div className="t29">
               <p>Theater Facilities</p>
             </div>
           </div>
         </div>
-        <hr style={{ width: "70%", margin: "auto" }}></hr>
+        <hr className="t30"></hr>
 
         <div className="tamenities2">
           <div>
@@ -706,85 +648,85 @@ export const HotelDescription = ({ formData }) => {
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <LocalCafeRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Cafe</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <LocalBarRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Bar</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Banqueting service</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <LocalDrinkRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Water Bottle</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <RestaurantRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Restaurent</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <LocalCafeRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Coffe Maker</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Breakfast Room</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Barbecue</p>
               </div>
             </div>
           </div>
         </div>
 
-        <hr style={{ width: "70%", margin: "auto" }}></hr>
+        <hr className="t31"></hr>
 
         <div className="tamenities2">
           <div>
@@ -792,220 +734,220 @@ export const HotelDescription = ({ formData }) => {
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Shops</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ConfirmationNumberRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Ticket Office</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Wedding Facilities</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Smoking Areas</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <SmokeFreeRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Non Smoking Floor</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Lounge</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <SmokeFreeRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Non Smoking</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <LocalLaundryServiceRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Laundry</p>
               </div>
             </div>
           </div>
         </div>
-        <hr style={{ width: "70%", margin: "auto" }}></hr>
+        <hr className="t31"></hr>
         <div className="tamenities2">
           <div>
             <h3>In room</h3>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <TableChartRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Desk</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Hair Dryer</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <AcUnitRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Air Condition</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <BathtubRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Shower</p>
               </div>
             </div>
           </div>
         </div>
 
-        <hr style={{ width: "70%", margin: "auto" }}></hr>
+        <hr className="t31"></hr>
         <div className="tamenities2">
           <div>
             <h3>Leisure</h3>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <BathtubRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Suana</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <NoteRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Newspaper</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Library</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <AirlineSeatFlatAngledRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Massage</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Steam Room</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Salon</p>
               </div>
             </div>
           </div>
 
           <div>
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Pool Bar</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <ArrowForwardRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Night Club</p>
               </div>
             </div>
 
-            <div style={{ display: "flex" }}>
-              <div style={{ marginTop: "16px" }}>
+            <div className="t9">
+              <div className="t19">
                 <AirlineSeatFlatRoundedIcon fontSize="small" />
               </div>
-              <div style={{ marginLeft: "3px" }}>
+              <div className="t29">
                 <p>Spa</p>
               </div>
             </div>
@@ -1017,14 +959,3 @@ export const HotelDescription = ({ formData }) => {
     </div>
   );
 };
-
-/*[
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/443227701/443227701_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/619143134/619143134_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/351852349/351852349_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/443227700/443227700_960x576.jpg",
-  ];
-  
-  <div class="PriceChangeReminder_PriceChangeReminder__PEAeK"><h2 class="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxl__1Sso6 BpkText_bpk-text--bold__3ulW0 MainPrice_MainPrice__price__1E4SF">₹ 2,730</h2></div>*/
