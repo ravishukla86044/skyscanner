@@ -20,9 +20,6 @@ function App() {
         <Route exact path="/hotelsdescription/:name">
           <HotelDescription formData={formData} />
         </Route>
-        <Route exact path="/payment/:name">
-          <MainPaymentPage formData={formData} />
-        </Route>
       </Switch>
     </div>
   );
