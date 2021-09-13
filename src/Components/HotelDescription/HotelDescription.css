@@ -361,6 +361,9 @@ p {
   margin-top: 16px;
   margin-left: 5px;
 }
+.t12 button {
+  background: rgb(0, 136, 126) !important;
+}
 .t13 {
   background: rgb(0, 136, 126);
   width: 24px;

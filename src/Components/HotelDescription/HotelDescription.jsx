@@ -32,14 +32,13 @@ import StarRoundedIcon from "@material-ui/icons/StarRounded";
 import Button from "@material-ui/core/Button";
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 import { dataa } from "../CartPage/utils/dataa";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "../../Components/CartPage/Item.module.css";
 import Footer from "../../Components/HomePage/Components/Footer/Footer";
 import Heading from "../../Components/HomePage/Components/Header/Heading";
 export const HotelDescription = ({ formData }) => {
   const { name } = useParams();
   console.log(formData, name);
-  const history = useHistory();
   const img = formData.current.target.img.slice(0, 6);
   const star = Number(formData.current.target.star);
   const address = formData.current.target.addrs;
@@ -48,7 +47,7 @@ export const HotelDescription = ({ formData }) => {
   const review = formData.current.target.reviews;
   const price = Number(formData.current.target.lowPrice.price);
   //  console.log(price);
-  //console.log(star);
+  console.log(star);
 
   function Star({ n }) {
     let arr = [];
@@ -137,25 +136,14 @@ export const HotelDescription = ({ formData }) => {
         <div className="t1">
           <div className="SectionHeader_SectionHeader__1YzyH">
             <h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
-              {name}
+              <Star n={star} />
             </h3>
           </div>
-          <div style={{ marginTop: "16px", marginLeft: "5%" }}>
-            <div className="SectionHeader_SectionHeader__1YzyH">
-              <h3 className="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxxl__1QpyP SectionHeader_SectionHeader__title__2lkEs">
-                <Star n={star} />
-              </h3>
-            </div>
-          </div>
         </div>
+      </div>
 
-        <div className="thotelAdress">
-          <p style={{ marginLeft: "10%", fontSize: "18px", fontFamily: "serif" }}>{address}</p>
-        </div>
-
-        <div className="thotelAdress">
-          <p className="t2">{address}</p>
-        </div>
+      <div className="thotelAdress">
+        <p className="t2">{address}</p>
       </div>
 
       <div className="tbelowAdress">
@@ -971,14 +959,3 @@ export const HotelDescription = ({ formData }) => {
     </div>
   );
 };
-
-/*[
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/443227701/443227701_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/619143134/619143134_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/351852349/351852349_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/464507279/464507279_960x576.jpg",
-    "https://d2xf5gjipzd8cd.cloudfront.net/available/443227700/443227700_960x576.jpg",
-  ];
-  
-  <div class="PriceChangeReminder_PriceChangeReminder__PEAeK"><h2 class="BpkText_bpk-text__1KRVP BpkText_bpk-text--xxl__1Sso6 BpkText_bpk-text--bold__3ulW0 MainPrice_MainPrice__price__1E4SF">₹ 2,730</h2></div>*/
