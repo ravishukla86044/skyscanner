@@ -1,5 +1,4 @@
 # Project-Skyscanner-clone
-<<<<<<< HEAD
 
 Skyscanner Ltd. Skyscanner is a metasearch engine and travel agency based in Edinburgh, Scotland. The site is available in over 30 languages and is used by 100 million people per month. The company lets people research and book travel options for their trips, including flights, hotels, and car hire.
 </br>
